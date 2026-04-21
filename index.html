@@ -1,28 +1,53 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OliveOro – Premium Olivenöl Handel</title>
+  <title>Zaitoun – Islamisches Premium Olivenöl</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --green: #4a7c3f;
-      --green-light: #6b9e5e;
-      --green-dark: #2d5a24;
-      --gold: #c9a84c;
-      --gold-light: #e8c96e;
-      --cream: #faf8f2;
+      --green: #1a6b3a;
+      --green-light: #2d8a52;
+      --green-dark: #0d4a28;
+      --gold: #b8860b;
+      --gold-light: #d4a017;
+      --gold-shine: #f0c040;
+      --cream: #fdf9f0;
       --dark: #1a1a1a;
       --gray: #555;
-      --border: #e0d8c8;
+      --border: #e0d5b8;
+      --pattern-bg: #f7f2e5;
     }
 
     body {
-      font-family: 'Georgia', serif;
+      font-family: 'Cairo', sans-serif;
       background: var(--cream);
       color: var(--dark);
+    }
+
+    /* ISLAMIC GEOMETRIC PATTERN */
+    .geo-pattern {
+      background-color: var(--green-dark);
+      background-image:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 10px),
+        repeating-linear-gradient(-45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 10px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 20px);
+    }
+
+    /* ARABESQUE BORDER */
+    .arabesque {
+      height: 8px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--gold) 0px, var(--gold) 8px,
+        var(--gold-light) 8px, var(--gold-light) 16px,
+        var(--gold-shine) 16px, var(--gold-shine) 24px,
+        var(--gold-light) 24px, var(--gold-light) 32px
+      );
     }
 
     /* HEADER */
@@ -33,7 +58,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.4);
     }
     .header-inner {
       max-width: 1200px;
@@ -41,121 +66,206 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 70px;
+      height: 75px;
     }
     .logo {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-      letter-spacing: 1px;
+      gap: 0.7rem;
     }
-    .logo span { color: var(--gold-light); }
+    .logo-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 1.8rem;
+      color: var(--gold-shine);
+      line-height: 1;
+    }
+    .logo-de {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
     nav a {
       color: rgba(255,255,255,0.85);
       text-decoration: none;
       margin-left: 2rem;
-      font-family: Arial, sans-serif;
       font-size: 0.95rem;
       transition: color 0.2s;
     }
-    nav a:hover { color: var(--gold-light); }
+    nav a:hover { color: var(--gold-shine); }
     .cart-btn {
       background: var(--gold);
       color: white;
       border: none;
-      padding: 0.5rem 1.2rem;
-      border-radius: 25px;
+      padding: 0.5rem 1.3rem;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 0.9rem;
       margin-left: 2rem;
       transition: background 0.2s;
+      font-family: 'Cairo', sans-serif;
     }
     .cart-btn:hover { background: var(--gold-light); }
 
+    /* BISMILLAH BANNER */
+    .bismillah {
+      background: var(--green-dark);
+      text-align: center;
+      padding: 0.6rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .bismillah span {
+      font-family: 'Amiri', serif;
+      font-size: 1.4rem;
+      color: var(--gold-shine);
+      letter-spacing: 3px;
+    }
+
     /* HERO */
     .hero {
-      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 50%, var(--green-light) 100%);
+      background: linear-gradient(160deg, var(--green-dark) 0%, #0a3d1f 40%, #1a5c35 100%);
       color: white;
       text-align: center;
-      padding: 6rem 2rem;
+      padding: 5rem 2rem 6rem;
       position: relative;
       overflow: hidden;
     }
+    /* Star of David / Islamic star pattern overlay */
     .hero::before {
-      content: '🫒';
+      content: '';
       position: absolute;
-      font-size: 20rem;
-      opacity: 0.06;
-      top: -4rem;
-      right: -3rem;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(184,134,11,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(184,134,11,0.08) 0%, transparent 50%);
+      pointer-events: none;
     }
-    .hero::after {
-      content: '🫒';
+    .hero-crescent {
+      font-size: 5rem;
       position: absolute;
-      font-size: 14rem;
-      opacity: 0.06;
-      bottom: -2rem;
-      left: -2rem;
+      top: 1.5rem;
+      right: 3rem;
+      opacity: 0.12;
+    }
+    .quran-verse {
+      font-family: 'Amiri', serif;
+      font-size: 1.6rem;
+      color: var(--gold-shine);
+      margin-bottom: 0.4rem;
+      letter-spacing: 2px;
+    }
+    .quran-ref {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 2.5rem;
+      font-style: italic;
     }
     .hero h1 {
+      font-family: 'Amiri', serif;
       font-size: 3rem;
       margin-bottom: 1rem;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
-    .hero h1 span { color: var(--gold-light); }
+    .hero h1 span { color: var(--gold-shine); }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       opacity: 0.9;
       max-width: 600px;
-      margin: 0 auto 2rem;
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
     }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
       background: var(--gold);
       color: white;
       padding: 0.9rem 2.2rem;
-      border-radius: 30px;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 1.05rem;
-      font-family: Arial, sans-serif;
+      font-size: 1rem;
       transition: transform 0.2s, background 0.2s;
       display: inline-block;
+      font-family: 'Cairo', sans-serif;
+      border: 2px solid transparent;
     }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
     .btn-secondary {
       background: transparent;
       color: white;
       padding: 0.9rem 2.2rem;
-      border-radius: 30px;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 1.05rem;
-      font-family: Arial, sans-serif;
-      border: 2px solid rgba(255,255,255,0.6);
+      font-size: 1rem;
+      border: 2px solid rgba(255,255,255,0.5);
       transition: border-color 0.2s, background 0.2s;
       display: inline-block;
+      font-family: 'Cairo', sans-serif;
     }
-    .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.1); }
+    .btn-secondary:hover { border-color: var(--gold-shine); color: var(--gold-shine); }
 
-    /* BADGES */
+    /* HALAL + INFO BAR */
     .badges {
       background: var(--gold);
       display: flex;
       justify-content: center;
       gap: 3rem;
-      padding: 1rem;
+      padding: 0.9rem 1rem;
       flex-wrap: wrap;
     }
     .badge {
       color: white;
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       display: flex;
       align-items: center;
       gap: 0.4rem;
+      font-weight: 600;
+    }
+
+    /* QURAN SECTION */
+    .quran-section {
+      background: var(--pattern-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .quran-box {
+      max-width: 700px;
+      margin: 0 auto;
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      background: white;
+      position: relative;
+    }
+    .quran-box::before, .quran-box::after {
+      content: '✦';
+      color: var(--gold);
+      font-size: 1.2rem;
+      position: absolute;
+      top: -0.75rem;
+    }
+    .quran-box::before { left: 2rem; }
+    .quran-box::after { right: 2rem; }
+    .arabic-text {
+      font-family: 'Amiri', serif;
+      font-size: 1.8rem;
+      color: var(--green-dark);
+      line-height: 2;
+      margin-bottom: 1rem;
+      direction: rtl;
+    }
+    .verse-translation {
+      font-style: italic;
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .verse-ref {
+      margin-top: 0.8rem;
+      font-size: 0.82rem;
+      color: var(--gold);
+      font-weight: 600;
     }
 
     /* SECTION */
@@ -165,20 +275,36 @@
       margin-bottom: 2.5rem;
     }
     .section-title h2 {
-      font-size: 2rem;
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
       color: var(--green-dark);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .section-title .subtitle-ar {
+      font-family: 'Amiri', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      direction: rtl;
+      margin-bottom: 0.3rem;
     }
     .section-title p {
       color: var(--gray);
-      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
     }
     .divider {
-      width: 60px;
-      height: 3px;
-      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
       margin: 0.8rem auto 0;
-      border-radius: 2px;
+      color: var(--gold);
+      font-size: 1rem;
+    }
+    .divider-line {
+      width: 50px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 1px;
     }
 
     /* PRODUCTS */
@@ -189,21 +315,31 @@
     }
     .product-card {
       background: white;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.07);
       transition: transform 0.25s, box-shadow 0.25s;
       border: 1px solid var(--border);
     }
-    .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.13); }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
     .product-img {
       width: 100%;
-      height: 200px;
+      height: 190px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 6rem;
+      font-size: 5.5rem;
       position: relative;
+    }
+    /* Islamic geometric corner decoration */
+    .product-img::after {
+      content: '✦';
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.8rem;
+      color: var(--gold);
+      font-size: 0.9rem;
+      opacity: 0.5;
     }
     .badge-label {
       position: absolute;
@@ -211,25 +347,41 @@
       left: 1rem;
       background: var(--green);
       color: white;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       padding: 0.25rem 0.7rem;
-      border-radius: 20px;
-      font-family: Arial, sans-serif;
+      border-radius: 4px;
+      font-weight: 600;
     }
     .badge-label.gold { background: var(--gold); }
+    .badge-label.halal {
+      background: #006400;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
     .product-body { padding: 1.3rem; }
-    .product-body h3 { font-size: 1.1rem; color: var(--green-dark); margin-bottom: 0.3rem; }
+    .product-body h3 {
+      font-size: 1.05rem;
+      color: var(--green-dark);
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+    .product-name-ar {
+      font-family: 'Amiri', serif;
+      font-size: 0.95rem;
+      color: var(--gold);
+      direction: rtl;
+      margin-bottom: 0.4rem;
+    }
     .product-origin {
       font-size: 0.82rem;
       color: var(--gray);
-      font-family: Arial, sans-serif;
       margin-bottom: 0.6rem;
     }
     .product-desc {
-      font-size: 0.88rem;
+      font-size: 0.87rem;
       color: #666;
-      font-family: Arial, sans-serif;
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 1rem;
     }
     .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; }
@@ -237,18 +389,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.8rem;
+      margin-top: 0.3rem;
     }
-    .price { font-size: 1.4rem; font-weight: bold; color: var(--green-dark); }
-    .price-unit { font-size: 0.8rem; color: var(--gray); font-family: Arial, sans-serif; }
+    .price { font-size: 1.4rem; font-weight: 700; color: var(--green-dark); }
+    .price-unit { font-size: 0.78rem; color: var(--gray); }
     .add-btn {
       background: var(--green);
       color: white;
       border: none;
       padding: 0.55rem 1.2rem;
-      border-radius: 25px;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       transition: background 0.2s;
+      font-family: 'Cairo', sans-serif;
     }
     .add-btn:hover { background: var(--green-dark); }
 
@@ -266,38 +422,80 @@
     }
     .feature-item { padding: 1.5rem 1rem; }
     .feature-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
-    .feature-item h3 { color: var(--green-dark); margin-bottom: 0.4rem; }
-    .feature-item p { color: var(--gray); font-family: Arial, sans-serif; font-size: 0.9rem; line-height: 1.5; }
+    .feature-item h3 { color: var(--green-dark); margin-bottom: 0.4rem; font-size: 1rem; }
+    .feature-item p { color: var(--gray); font-size: 0.88rem; line-height: 1.6; }
 
-    /* CONTACT / ORDER */
-    .order-section {
-      background: linear-gradient(135deg, var(--green-dark), var(--green));
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .order-section h2 { font-size: 2rem; margin-bottom: 1rem; }
-    .order-section p { opacity: 0.9; font-family: Arial, sans-serif; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-    .order-form {
-      max-width: 550px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.1);
-      padding: 2rem;
+    /* GROSSHANDEL */
+    .grosshandel-box {
+      background: linear-gradient(135deg, var(--pattern-bg), #efe9d5);
+      border: 1px solid var(--border);
       border-radius: 12px;
+      padding: 3rem;
+      margin: 2rem auto;
+      max-width: 1100px;
+    }
+
+    /* CONTACT FORM */
+    .order-section {
+      background: linear-gradient(160deg, var(--green-dark), #0a3d1f);
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .order-section::before {
+      content: 'بسم الله';
+      font-family: 'Amiri', serif;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.03);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .order-section h2 {
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
+      margin-bottom: 0.4rem;
+    }
+    .order-section .ar-sub {
+      font-family: 'Amiri', serif;
+      font-size: 1.2rem;
+      color: var(--gold-shine);
+      margin-bottom: 1rem;
+    }
+    .order-section > p {
+      opacity: 0.85;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    .order-form {
+      max-width: 560px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.08);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
       backdrop-filter: blur(5px);
     }
     .form-group { margin-bottom: 1rem; text-align: left; }
-    .form-group label { display: block; font-size: 0.85rem; margin-bottom: 0.3rem; font-family: Arial, sans-serif; opacity: 0.9; }
+    .form-group label { display: block; font-size: 0.85rem; margin-bottom: 0.3rem; opacity: 0.9; }
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
       padding: 0.75rem 1rem;
-      border-radius: 8px;
-      border: none;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.2);
       font-size: 0.95rem;
-      font-family: Arial, sans-serif;
-      background: rgba(255,255,255,0.95);
+      font-family: 'Cairo', sans-serif;
+      background: rgba(255,255,255,0.92);
       color: var(--dark);
     }
     .form-group textarea { height: 100px; resize: vertical; }
@@ -308,18 +506,19 @@
       color: white;
       border: none;
       padding: 1rem;
-      border-radius: 30px;
-      font-size: 1.05rem;
+      border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
       margin-top: 0.5rem;
       transition: background 0.2s, transform 0.2s;
-      font-family: Arial, sans-serif;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 600;
     }
     .submit-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
 
     /* FOOTER */
     footer {
-      background: var(--dark);
+      background: #0d1a10;
       color: rgba(255,255,255,0.7);
       padding: 3rem 2rem 1.5rem;
     }
@@ -331,25 +530,30 @@
       gap: 2rem;
       margin-bottom: 2rem;
     }
-    .footer-col h4 { color: var(--gold-light); margin-bottom: 1rem; font-size: 1rem; }
+    .footer-col h4 { color: var(--gold-shine); margin-bottom: 1rem; font-size: 0.95rem; }
+    .footer-col .ar-h { font-family: 'Amiri', serif; font-size: 1rem; color: var(--gold-shine); }
     .footer-col p, .footer-col a {
-      font-family: Arial, sans-serif;
-      font-size: 0.87rem;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.6);
+      font-size: 0.86rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.55);
       text-decoration: none;
       display: block;
     }
-    .footer-col a:hover { color: var(--gold-light); }
+    .footer-col a:hover { color: var(--gold-shine); }
     .footer-bottom {
       max-width: 1200px;
       margin: 0 auto;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 1.5rem;
       text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 0.83rem;
-      color: rgba(255,255,255,0.4);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 1rem;
+      color: var(--gold-shine);
+      margin-bottom: 0.5rem;
     }
 
     /* TOAST */
@@ -361,13 +565,13 @@
       color: white;
       padding: 0.8rem 1.5rem;
       border-radius: 8px;
-      font-family: Arial, sans-serif;
       font-size: 0.95rem;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.3s, transform 0.3s;
       z-index: 999;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      border-left: 4px solid var(--gold);
     }
     #toast.show { opacity: 1; transform: translateY(0); }
 
@@ -376,29 +580,46 @@
       nav { display: none; }
       .form-row { grid-template-columns: 1fr; }
       .badges { gap: 1.5rem; }
+      .grosshandel-box > div { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
 <body>
 
+<!-- BISMILLAH TOP BAR -->
+<div class="bismillah">
+  <span>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span>
+</div>
+
+<!-- GOLD ARABESQUE LINE -->
+<div class="arabesque"></div>
+
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <div class="logo">🫒 <span>Olive</span>Oro</div>
+    <div class="logo">
+      <div>
+        <div class="logo-arabic">زيتون</div>
+        <div class="logo-de">ZAITOUN HANDEL</div>
+      </div>
+    </div>
     <nav>
       <a href="#produkte">Produkte</a>
-      <a href="#vorteile">Vorteile</a>
+      <a href="#quran">Baraka</a>
       <a href="#grosshandel">Großhandel</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <button class="cart-btn" onclick="showToast('Warenkorb öffnen...')">🛒 Warenkorb (<span id="cart-count">0</span>)</button>
+    <button class="cart-btn" onclick="showToast('Warenkorb wird geöffnet...')">🛒 Warenkorb (<span id="cart-count">0</span>)</button>
   </div>
 </header>
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Erstklassiges <span>Olivenöl</span><br>direkt vom Produzenten</h1>
-  <p>Wir handeln mit Premium-Olivenölen aus den besten Anbaugebieten des Mittelmeerraums – für Privatkunden und den Großhandel.</p>
+  <div class="hero-crescent">☪️</div>
+  <div class="quran-verse">وَشَجَرَةً تَخْرُجُ مِن طُورِ سَيْنَاءَ</div>
+  <div class="quran-ref">„... und einem Baum, der vom Berg Sinai hervorgeht" – Surah Al-Mu'minun (23:20)</div>
+  <h1>Reines <span>Halal Olivenöl</span><br>vom Segen Allahs</h1>
+  <p>Wir bringen Ihnen das gesegnetste Öl der Erde – kaltgepresst, halal-zertifiziert und direkt aus den islamischen Ländern des Mittelmeerraums.</p>
   <div class="hero-btns">
     <a href="#produkte" class="btn-primary">Produkte entdecken</a>
     <a href="#grosshandel" class="btn-secondary">Großhandel anfragen</a>
@@ -407,33 +628,101 @@
 
 <!-- BADGES BAR -->
 <div class="badges">
-  <div class="badge">✅ Zertifiziert Bio</div>
+  <div class="badge">☪️ 100% Halal zertifiziert</div>
+  <div class="badge">🌿 Kaltgepresst & Rein</div>
   <div class="badge">🚚 Versand in 24h</div>
-  <div class="badge">🌍 Direkt importiert</div>
-  <div class="badge">💰 Großhandelspreise</div>
-  <div class="badge">⭐ Über 500 Kunden</div>
+  <div class="badge">🌍 Aus muslimischen Ländern</div>
+  <div class="badge">⭐ Baraka garantiert</div>
 </div>
+
+<!-- QURAN VERSE SECTION -->
+<div class="quran-section" id="quran">
+  <div class="quran-box">
+    <div class="arabic-text">
+      يُوقَدُ مِن شَجَرَةٍ مُّبَارَكَةٍ زَيْتُونَةٍ لَّا شَرْقِيَّةٍ وَلَا غَرْبِيَّةٍ يَكَادُ زَيْتُهَا يُضِيءُ وَلَوْ لَمْ تَمْسَسْهُ نَارٌ
+    </div>
+    <p class="verse-translation">
+      „... entzündet von einem gesegneten Baum, einem Ölbaum, weder östlich noch westlich, dessen Öl beinahe leuchten würde, auch wenn es kein Feuer berührt hätte."
+    </p>
+    <div class="verse-ref">Surah An-Nur (24:35) – Das Licht des Olivenöls</div>
+  </div>
+  <p style="margin-top: 1.5rem; color: var(--gray); font-size: 0.9rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+    Der Prophet Muhammad ﷺ sagte: <em>„Esset Olivenöl und salbt euch damit, denn es stammt von einem gesegneten Baum."</em><br>
+    <span style="font-size: 0.8rem; color: #999;">(Tirmidhi & Ibn Majah)</span>
+  </p>
+</div>
+
+<!-- ARABESQUE DIVIDER -->
+<div class="arabesque"></div>
 
 <!-- PRODUCTS -->
 <section id="produkte">
   <div class="section-title">
-    <h2>Unsere Produkte</h2>
-    <p>Handverlesene Qualität aus Griechenland, Italien, Spanien und der Türkei</p>
-    <div class="divider"></div>
+    <div class="subtitle-ar">منتجاتنا</div>
+    <h2>Unsere Halal-Produkte</h2>
+    <p>Handverlesenes Olivenöl aus Palästina, Marokko, Tunesien und der Türkei</p>
+    <div class="divider">
+      <div class="divider-line"></div>
+      ✦
+      <div class="divider-line"></div>
+    </div>
   </div>
 
   <div class="products-grid">
 
     <div class="product-card">
-      <div class="product-img" style="background:#f0f7ee;">
+      <div class="product-img" style="background: linear-gradient(135deg, #e8f5e9, #f1f8e9);">
         🫒
+        <span class="badge-label halal">☪️ Halal</span>
+      </div>
+      <div class="product-body">
+        <h3>Palästinensisches Olivenöl</h3>
+        <div class="product-name-ar">زيت زيتون فلسطيني</div>
+        <div class="product-origin">📍 Ramallah, Palästina</div>
+        <div class="stars">★★★★★</div>
+        <p class="product-desc">Kaltgepresst aus uralten Olivenbäumen des Heiligen Landes. Das gesegnetste Öl der Erde – nativ extra, Säuregehalt &lt;0,2%.</p>
+        <div class="product-footer">
+          <div>
+            <div class="price">€ 11,90</div>
+            <div class="price-unit">pro 750ml Flasche</div>
+          </div>
+          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img" style="background: linear-gradient(135deg, #fff8e1, #fffde7);">
+        🍶
         <span class="badge-label gold">Bestseller</span>
       </div>
       <div class="product-body">
-        <h3>Kretisches Nativ Extra</h3>
-        <div class="product-origin">📍 Kreta, Griechenland</div>
+        <h3>Marokkanisches Bio-Öl</h3>
+        <div class="product-name-ar">زيت الزيتون المغربي العضوي</div>
+        <div class="product-origin">📍 Meknès, Marokko</div>
         <div class="stars">★★★★★</div>
-        <p class="product-desc">Kaltgepresst aus der Koroneiki-Olive. Intensiver Geschmack, niedriger Säuregehalt (&lt;0,2%). Ideal für Salate und zum Verfeinern.</p>
+        <p class="product-desc">Bio-zertifiziert aus der Picholine-Olive. Fruchtig-mildes Aroma, goldene Farbe. Perfekt für arabische Gerichte und Brot.</p>
+        <div class="product-footer">
+          <div>
+            <div class="price">€ 9,50</div>
+            <div class="price-unit">pro 750ml Flasche</div>
+          </div>
+          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img" style="background: linear-gradient(135deg, #f3e5f5, #fce4ec);">
+        🏺
+        <span class="badge-label halal">☪️ Halal</span>
+      </div>
+      <div class="product-body">
+        <h3>Tunesisches Chemlali Öl</h3>
+        <div class="product-name-ar">زيت شملالي تونسي</div>
+        <div class="product-origin">📍 Sfax, Tunesien</div>
+        <div class="stars">★★★★☆</div>
+        <p class="product-desc">Aus der traditionellen Chemlali-Olive. Leicht würziger Geschmack mit Kräuternoten. Ideal für Couscous und Tajine.</p>
         <div class="product-footer">
           <div>
             <div class="price">€ 8,90</div>
@@ -445,58 +734,19 @@
     </div>
 
     <div class="product-card">
-      <div class="product-img" style="background:#fffbf0;">
-        🍶
-        <span class="badge-label">Bio Zertifiziert</span>
-      </div>
-      <div class="product-body">
-        <h3>Toskana Bio Olivenöl</h3>
-        <div class="product-origin">📍 Toskana, Italien</div>
-        <div class="stars">★★★★★</div>
-        <p class="product-desc">EU-Bio-zertifiziert aus der Frantoio-Olive. Mildes Aroma mit fruchtigen Noten – perfekt für die mediterrane Küche.</p>
-        <div class="product-footer">
-          <div>
-            <div class="price">€ 12,50</div>
-            <div class="price-unit">pro 750ml Flasche</div>
-          </div>
-          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-img" style="background:#f5f0ff;">
-        🏺
-        <span class="badge-label">Premium</span>
-      </div>
-      <div class="product-body">
-        <h3>Andalusisches Reserva</h3>
-        <div class="product-origin">📍 Jaén, Spanien</div>
-        <div class="stars">★★★★☆</div>
-        <p class="product-desc">Aus früh geernteten Picual-Oliven. Kräftiger, leicht pfeffriger Abgang. Hoher Polyphenolgehalt für beste Gesundheitsvorteile.</p>
-        <div class="product-footer">
-          <div>
-            <div class="price">€ 9,90</div>
-            <div class="price-unit">pro 750ml Flasche</div>
-          </div>
-          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-img" style="background:#f0fff4;">
+      <div class="product-img" style="background: linear-gradient(135deg, #e0f7fa, #e8f5e9);">
         🫙
         <span class="badge-label gold">Großhandel</span>
       </div>
       <div class="product-body">
-        <h3>Griechisches Kanister 5L</h3>
-        <div class="product-origin">📍 Peloponnes, Griechenland</div>
+        <h3>Türkisches Halal 5L Kanister</h3>
+        <div class="product-name-ar">زيت زيتون تركي حلال ٥ لتر</div>
+        <div class="product-origin">📍 Izmir, Türkei</div>
         <div class="stars">★★★★★</div>
-        <p class="product-desc">Ideal für Restaurants, Caterer und Wiederverkäufer. Nativ Extra, kaltgepresst, im praktischen 5-Liter-Blecheimer.</p>
+        <p class="product-desc">Für Restaurants, Caterer & Moscheen. Nativ Extra, kaltgepresst, halal-zertifiziert im 5L-Kanister.</p>
         <div class="product-footer">
           <div>
-            <div class="price">€ 38,00</div>
+            <div class="price">€ 36,00</div>
             <div class="price-unit">pro 5L Kanister</div>
           </div>
           <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
@@ -505,17 +755,19 @@
     </div>
 
     <div class="product-card">
-      <div class="product-img" style="background:#fff8f0;">
+      <div class="product-img" style="background: linear-gradient(135deg, #fff3e0, #fbe9e7);">
         🌿
+        <span class="badge-label halal">☪️ Halal</span>
       </div>
       <div class="product-body">
-        <h3>Türkisches Ayvalik Öl</h3>
-        <div class="product-origin">📍 Ayvalik, Türkei</div>
-        <div class="stars">★★★★☆</div>
-        <p class="product-desc">Aus der Ayvalik-Olivensorte. Goldene Farbe, sanftes Aroma, leicht süßlich. Hervorragend für Brot und Antipasti.</p>
+        <h3>Jordanisches Rasheid Öl</h3>
+        <div class="product-name-ar">زيت زيتون الأردني</div>
+        <div class="product-origin">📍 Ajloun, Jordanien</div>
+        <div class="stars">★★★★★</div>
+        <p class="product-desc">Vom Hashemitischen Königreich Jordanien. Kräftiges Aroma, hoher Polyphenolgehalt. Sunna-gemäßer Genuss.</p>
         <div class="product-footer">
           <div>
-            <div class="price">€ 7,50</div>
+            <div class="price">€ 10,90</div>
             <div class="price-unit">pro 750ml Flasche</div>
           </div>
           <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
@@ -524,18 +776,19 @@
     </div>
 
     <div class="product-card">
-      <div class="product-img" style="background:#f0f8ff;">
+      <div class="product-img" style="background: linear-gradient(135deg, #e8eaf6, #e3f2fd);">
         💎
         <span class="badge-label gold">Exklusiv</span>
       </div>
       <div class="product-body">
-        <h3>Athinolia Prestige</h3>
-        <div class="product-origin">📍 Lakonien, Griechenland</div>
+        <h3>Al-Baraka Prestige Edition</h3>
+        <div class="product-name-ar">زيت البركة الممتاز</div>
+        <div class="product-origin">📍 Nablus, Palästina</div>
         <div class="stars">★★★★★</div>
-        <p class="product-desc">Rarität aus der seltenen Athinolia-Olive. Ausgezeichnet auf internationalen Messen. Limitierte Jahresproduktion.</p>
+        <p class="product-desc">Unser edelster Tropfen – aus 1000 Jahre alten Olivenbäumen. Limitierte Ernte. International ausgezeichnet.</p>
         <div class="product-footer">
           <div>
-            <div class="price">€ 19,90</div>
+            <div class="price">€ 22,90</div>
             <div class="price-unit">pro 500ml Flasche</div>
           </div>
           <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
@@ -546,89 +799,101 @@
   </div>
 </section>
 
+<!-- ARABESQUE DIVIDER -->
+<div class="arabesque"></div>
+
 <!-- FEATURES -->
 <div class="features-bg" id="vorteile">
   <section style="padding: 4rem 2rem;">
     <div class="section-title">
-      <h2>Warum OliveOro?</h2>
-      <p>Qualität, Vertrauen und Transparenz stehen bei uns an erster Stelle</p>
-      <div class="divider"></div>
+      <div class="subtitle-ar">مميزاتنا</div>
+      <h2>Warum Zaitoun Handel?</h2>
+      <p>Qualität, Vertrauen und islamische Werte</p>
+      <div class="divider">
+        <div class="divider-line"></div>
+        ✦
+        <div class="divider-line"></div>
+      </div>
     </div>
     <div class="features-grid">
       <div class="feature-item">
-        <div class="feature-icon">🌿</div>
-        <h3>100% Natur</h3>
-        <p>Keine Zusatzstoffe, keine Konservierungsmittel – nur reines, naturbelassenes Olivenöl.</p>
+        <div class="feature-icon">☪️</div>
+        <h3>100% Halal zertifiziert</h3>
+        <p>Alle unsere Produkte sind offiziell halal-zertifiziert – für Ihren vertrauensvollen Genuss.</p>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">🏭</div>
-        <h3>Direkt vom Erzeuger</h3>
-        <p>Wir kaufen direkt bei kleinen Familienbetrieben – für beste Qualität und faire Preise.</p>
+        <div class="feature-icon">🌿</div>
+        <h3>Sunna-gemäß</h3>
+        <p>Olivenöl ist Sunnah des Propheten Muhammad ﷺ. Wir ehren diese Tradition mit höchster Qualität.</p>
       </div>
       <div class="feature-item">
         <div class="feature-icon">🔬</div>
-        <h3>Laborgeprüft</h3>
-        <p>Jede Charge wird auf Säuregehalt, Polyphenole und Reinheit geprüft.</p>
+        <h3>Laborgeprüft & Rein</h3>
+        <p>Jede Charge wird auf Säuregehalt, Reinheit und Qualität in akkreditierten Laboren geprüft.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🤲</div>
+        <h3>Direkt aus der Ummah</h3>
+        <p>Wir kaufen direkt bei muslimischen Familienbetrieben – fair und transparent.</p>
       </div>
       <div class="feature-item">
         <div class="feature-icon">📦</div>
-        <h3>Sicher verpackt</h3>
-        <p>Lichtgeschützte Flaschen und auslaufsichere Verpackung für den Transport.</p>
+        <h3>Sicher & lichtgeschützt</h3>
+        <p>Dunkle Glasflaschen und sorgfältige Verpackung schützen das Öl auf dem Transportweg.</p>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">🚚</div>
-        <h3>Schnelle Lieferung</h3>
-        <p>Versand innerhalb von 24 Stunden, Lieferung in 2–4 Werktagen deutschlandweit.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🤝</div>
-        <h3>Großhandel willkommen</h3>
-        <p>Spezielle Konditionen für Restaurants, Händler und gewerbliche Kunden.</p>
+        <div class="feature-icon">🕌</div>
+        <h3>Moscheen & Einrichtungen</h3>
+        <p>Sonderkonditionen für Moscheen, islamische Schulen und muslimische Vereine.</p>
       </div>
     </div>
   </section>
 </div>
 
 <!-- GROSSHANDEL -->
-<section id="grosshandel" style="background: #f5f0e8; border-radius: 16px; padding: 3rem; margin: 2rem auto; max-width: 1100px;">
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-    <div>
-      <h2 style="color: var(--green-dark); font-size: 1.8rem; margin-bottom: 1rem;">Großhandel & B2B</h2>
-      <p style="font-family: Arial, sans-serif; color: var(--gray); line-height: 1.7; margin-bottom: 1rem;">
-        Sie sind Restaurantbesitzer, Lebensmittelhändler oder Importeur? Wir bieten attraktive Großhandelskonditionen ab einer Mindestbestellung von 50 Litern.
-      </p>
-      <ul style="font-family: Arial, sans-serif; color: var(--gray); line-height: 2; padding-left: 1.5rem;">
-        <li>Eigenmarken-Abfüllung (White Label)</li>
-        <li>Gebinde von 5L bis 200L Fässer</li>
-        <li>Rahmenverträge & Lieferabonnements</li>
-        <li>Individuelle Etikettierung möglich</li>
-        <li>EU-Lieferung & Exportdokumente</li>
-      </ul>
-      <a href="#kontakt" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Jetzt anfragen</a>
+<div id="grosshandel" style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+  <div class="grosshandel-box">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+      <div>
+        <div style="font-family: 'Amiri', serif; font-size: 1.2rem; color: var(--gold); margin-bottom: 0.5rem; direction: rtl;">تجارة الجملة والشراكة</div>
+        <h2 style="color: var(--green-dark); font-size: 1.8rem; margin-bottom: 1rem;">Großhandel & B2B</h2>
+        <p style="color: var(--gray); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem;">
+          Sie betreiben ein islamisches Restaurant, einen Halal-Supermarkt oder eine Moschee? Wir bieten attraktive Konditionen für muslimische Einrichtungen und Gewerbetreibende ab 50 Liter.
+        </p>
+        <ul style="color: var(--gray); line-height: 2.2; padding-left: 1.5rem; font-size: 0.92rem;">
+          <li>Halal-zertifizierte Eigenmarke (White Label)</li>
+          <li>Gebinde von 5L bis 200L Fässer</li>
+          <li>Rahmenverträge für Moscheen & Vereine</li>
+          <li>Arabische & deutsche Etikettierung</li>
+          <li>Lieferung in die gesamte EU</li>
+        </ul>
+        <a href="#kontakt" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Jetzt anfragen</a>
+      </div>
+      <div style="text-align: center; font-size: 9rem; line-height: 1; opacity: 0.85;">🫒</div>
     </div>
-    <div style="text-align: center; font-size: 10rem; line-height: 1;">🫒</div>
   </div>
-</section>
+</div>
 
 <!-- ORDER / CONTACT FORM -->
 <div class="order-section" id="kontakt">
+  <div class="ar-sub">تواصل معنا</div>
   <h2>Bestellung & Kontakt</h2>
-  <p>Füllen Sie das Formular aus – wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+  <p>Füllen Sie das Formular aus – wir melden uns innerhalb von 24 Stunden. Insha'Allah.</p>
 
   <form class="order-form" onsubmit="handleSubmit(event)">
     <div class="form-row">
       <div class="form-group">
         <label>Vorname *</label>
-        <input type="text" placeholder="Max" required>
+        <input type="text" placeholder="Ahmad" required>
       </div>
       <div class="form-group">
         <label>Nachname *</label>
-        <input type="text" placeholder="Mustermann" required>
+        <input type="text" placeholder="Al-Mahmoud" required>
       </div>
     </div>
     <div class="form-group">
       <label>E-Mail-Adresse *</label>
-      <input type="email" placeholder="max@beispiel.de" required>
+      <input type="email" placeholder="ahmad@beispiel.de" required>
     </div>
     <div class="form-group">
       <label>Telefon (optional)</label>
@@ -640,50 +905,56 @@
         <option value="">-- Bitte wählen --</option>
         <option>Privatbestellung (Einzelflaschen)</option>
         <option>Großhandel / B2B</option>
-        <option>Eigenmarke / White Label</option>
+        <option>Halal Eigenmarke / White Label</option>
+        <option>Moschee / Islamische Einrichtung</option>
         <option>Partnerprogramm / Wiederverkauf</option>
         <option>Sonstiges</option>
       </select>
     </div>
     <div class="form-group">
       <label>Nachricht / Bestelldetails</label>
-      <textarea placeholder="Welches Produkt interessiert Sie? Welche Menge? Haben Sie Fragen?"></textarea>
+      <textarea placeholder="Welches Produkt? Welche Menge? Fragen?"></textarea>
     </div>
-    <button type="submit" class="submit-btn">✉️ Anfrage absenden</button>
+    <button type="submit" class="submit-btn">✉️ Anfrage absenden – بِإِذْنِ اللَّه</button>
   </form>
 </div>
+
+<!-- ARABESQUE DIVIDER -->
+<div class="arabesque"></div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-col">
-      <h4>🫒 OliveOro</h4>
-      <p>Ihr Spezialist für Premium-Olivenöl aus dem Mittelmeerraum. Qualität, die man schmeckt.</p>
+      <h4 class="ar-h">زيتون</h4>
+      <h4 style="margin-top: 0.2rem; color: rgba(255,255,255,0.6); font-size: 0.85rem;">ZAITOUN HANDEL</h4>
+      <p style="margin-top: 0.8rem;">Ihr islamischer Spezialist für halal-zertifiziertes Premium-Olivenöl aus der muslimischen Welt.</p>
     </div>
     <div class="footer-col">
       <h4>Produkte</h4>
-      <a href="#produkte">Nativ Extra Olivenöl</a>
-      <a href="#produkte">Bio Olivenöl</a>
-      <a href="#produkte">Großgebinde 5L</a>
+      <a href="#produkte">Palästinensisches Olivenöl</a>
+      <a href="#produkte">Marokkanisches Bio-Öl</a>
+      <a href="#produkte">Großgebinde 5L Halal</a>
       <a href="#grosshandel">Großhandel</a>
     </div>
     <div class="footer-col">
       <h4>Unternehmen</h4>
       <a href="#">Über uns</a>
-      <a href="#">Qualitätsversprechen</a>
-      <a href="#">Partnerbetriebe</a>
+      <a href="#">Halal-Zertifizierung</a>
+      <a href="#">Unsere Partnerbetriebe</a>
       <a href="#">Impressum</a>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
-      <p>📧 info@oliveoro.de</p>
+      <p>📧 info@zaitoun-handel.de</p>
       <p>📞 +49 30 123 456 78</p>
       <p>🕐 Mo–Fr: 9–17 Uhr</p>
       <p>📍 Berlin, Deutschland</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 OliveOro GmbH – Alle Rechte vorbehalten | Datenschutz | AGB | Impressum</p>
+    <div class="footer-arabic">الحمد لله رب العالمين</div>
+    <p>© 2026 Zaitoun Handel GmbH – Alle Rechte vorbehalten | Datenschutz | AGB | Impressum</p>
   </div>
 </footer>
 
@@ -696,9 +967,9 @@
   function addToCart(btn) {
     cartCount++;
     document.getElementById('cart-count').textContent = cartCount;
-    showToast('✅ Produkt zum Warenkorb hinzugefügt!');
+    showToast('✅ Produkt hinzugefügt – الحمد لله');
     btn.textContent = '✓ Hinzugefügt';
-    btn.style.background = '#2d5a24';
+    btn.style.background = '#0d4a28';
     setTimeout(() => {
       btn.textContent = '+ Warenkorb';
       btn.style.background = '';
@@ -714,11 +985,10 @@
 
   function handleSubmit(e) {
     e.preventDefault();
-    showToast('✅ Anfrage gesendet! Wir melden uns bald.');
+    showToast('✅ Anfrage gesendet! إن شاء الله melden wir uns bald.');
     e.target.reset();
   }
 
-  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
