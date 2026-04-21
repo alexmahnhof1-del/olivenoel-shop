@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OliveOro – Premium Olivenöl Handel</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --green: #4a7c3f;
+      --green-light: #6b9e5e;
+      --green-dark: #2d5a24;
+      --gold: #c9a84c;
+      --gold-light: #e8c96e;
+      --cream: #faf8f2;
+      --dark: #1a1a1a;
+      --gray: #555;
+      --border: #e0d8c8;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--cream);
+      color: var(--dark);
+    }
+
+    /* HEADER */
+    header {
+      background: var(--green-dark);
+      color: white;
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .logo span { color: var(--gold-light); }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold-light); }
+    .cart-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-left: 2rem;
+      transition: background 0.2s;
+    }
+    .cart-btn:hover { background: var(--gold-light); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 50%, var(--green-light) 100%);
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '🫒';
+      position: absolute;
+      font-size: 20rem;
+      opacity: 0.06;
+      top: -4rem;
+      right: -3rem;
+    }
+    .hero::after {
+      content: '🫒';
+      position: absolute;
+      font-size: 14rem;
+      opacity: 0.06;
+      bottom: -2rem;
+      left: -2rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .hero h1 span { color: var(--gold-light); }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold);
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-family: Arial, sans-serif;
+      transition: transform 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-family: Arial, sans-serif;
+      border: 2px solid rgba(255,255,255,0.6);
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+    /* BADGES */
+    .badges {
+      background: var(--gold);
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* SECTION */
+    section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+    .section-title p {
+      color: var(--gray);
+      font-family: Arial, sans-serif;
+    }
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* PRODUCTS */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 2rem;
+    }
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 1px solid var(--border);
+    }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.13); }
+    .product-img {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      position: relative;
+    }
+    .badge-label {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--green);
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .badge-label.gold { background: var(--gold); }
+    .product-body { padding: 1.3rem; }
+    .product-body h3 { font-size: 1.1rem; color: var(--green-dark); margin-bottom: 0.3rem; }
+    .product-origin {
+      font-size: 0.82rem;
+      color: var(--gray);
+      font-family: Arial, sans-serif;
+      margin-bottom: 0.6rem;
+    }
+    .product-desc {
+      font-size: 0.88rem;
+      color: #666;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .price { font-size: 1.4rem; font-weight: bold; color: var(--green-dark); }
+    .price-unit { font-size: 0.8rem; color: var(--gray); font-family: Arial, sans-serif; }
+    .add-btn {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 0.55rem 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .add-btn:hover { background: var(--green-dark); }
+
+    /* FEATURES */
+    .features-bg {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .feature-item { padding: 1.5rem 1rem; }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .feature-item h3 { color: var(--green-dark); margin-bottom: 0.4rem; }
+    .feature-item p { color: var(--gray); font-family: Arial, sans-serif; font-size: 0.9rem; line-height: 1.5; }
+
+    /* CONTACT / ORDER */
+    .order-section {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .order-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .order-section p { opacity: 0.9; font-family: Arial, sans-serif; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .order-form {
+      max-width: 550px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
+    }
+    .form-group { margin-bottom: 1rem; text-align: left; }
+    .form-group label { display: block; font-size: 0.85rem; margin-bottom: 0.3rem; font-family: Arial, sans-serif; opacity: 0.9; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 0.95rem;
+      font-family: Arial, sans-serif;
+      background: rgba(255,255,255,0.95);
+      color: var(--dark);
+    }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .submit-btn {
+      width: 100%;
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 30px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s, transform 0.2s;
+      font-family: Arial, sans-serif;
+    }
+    .submit-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      padding: 3rem 2rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-col h4 { color: var(--gold-light); margin-bottom: 1rem; font-size: 1rem; }
+    .footer-col p, .footer-col a {
+      font-family: Arial, sans-serif;
+      font-size: 0.87rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      display: block;
+    }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* TOAST */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--green-dark);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 999;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      nav { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .badges { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">🫒 <span>Olive</span>Oro</div>
+    <nav>
+      <a href="#produkte">Produkte</a>
+      <a href="#vorteile">Vorteile</a>
+      <a href="#grosshandel">Großhandel</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <button class="cart-btn" onclick="showToast('Warenkorb öffnen...')">🛒 Warenkorb (<span id="cart-count">0</span>)</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Erstklassiges <span>Olivenöl</span><br>direkt vom Produzenten</h1>
+  <p>Wir handeln mit Premium-Olivenölen aus den besten Anbaugebieten des Mittelmeerraums – für Privatkunden und den Großhandel.</p>
+  <div class="hero-btns">
+    <a href="#produkte" class="btn-primary">Produkte entdecken</a>
+    <a href="#grosshandel" class="btn-secondary">Großhandel anfragen</a>
+  </div>
+</div>
+
+<!-- BADGES BAR -->
+<div class="badges">
+  <div class="badge">✅ Zertifiziert Bio</div>
+  <div class="badge">🚚 Versand in 24h</div>
+  <div class="badge">🌍 Direkt importiert</div>
+  <div class="badge">💰 Großhandelspreise</div>
+  <div class="badge">⭐ Über 500 Kunden</div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="produkte">
+  <div class="section-title">
+    <h2>Unsere Produkte</h2>
+    <p>Handverlesene Qualität aus Griechenland, Italien, Spanien und der Türkei</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-img" style="background:#f0f7ee;">
+        🫒
+        <span class="badge-label gold">Bestseller</span>
+      </div>
+      <div class="product-body">
+        <h3>Kretisches Nativ Extra</h3>
+        <div class="product-origin">📍 Kreta, Griechenland</div>
+        <div class="stars">★★★★★</div>
+        <p class="product-desc">Kaltgepresst aus der Koroneiki-Olive. Intensiver Geschmack, niedriger Säuregehalt (&lt;0,2%). Ideal für Salate und zum Verfeinern.</p>
+        <div class="product-footer">
+          <div>
+            <div class="price">€ 8,90</div>
+            <div class="price-unit">pro 750ml Flasche</div>
+          </div>
+          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img" style="background:#fffbf0;">
+        🍶
+        <span class="badge-label">Bio Zertifiziert</span>
+      </div>
+      <div class="product-body">
+        <h3>Toskana Bio Olivenöl</h3>
+        <div class="product-origin">📍 Toskana, Italien</div>
+        <div class="stars">★★★★★</div>
+        <p class="product-desc">EU-Bio-zertifiziert aus der Frantoio-Olive. Mildes Aroma mit fruchtigen Noten – perfekt für die mediterrane Küche.</p>
+        <div class="product-footer">
+          <div>
+            <div class="price">€ 12,50</div>
+            <div class="price-unit">pro 750ml Flasche</div>
+          </div>
+          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img" style="background:#f5f0ff;">
+        🏺
+        <span class="badge-label">Premium</span>
+      </div>
+      <div class="product-body">
+        <h3>Andalusisches Reserva</h3>
+        <div class="product-origin">📍 Jaén, Spanien</div>
+        <div class="stars">★★★★☆</div>
+        <p class="product-desc">Aus früh geernteten Picual-Oliven. Kräftiger, leicht pfeffriger Abgang. Hoher Polyphenolgehalt für beste Gesundheitsvorteile.</p>
+        <div class="product-footer">
+          <div>
+            <div class="price">€ 9,90</div>
+            <div class="price-unit">pro 750ml Flasche</div>
+          </div>
+          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img" style="background:#f0fff4;">
+        🫙
+        <span class="badge-label gold">Großhandel</span>
+      </div>
+      <div class="product-body">
+        <h3>Griechisches Kanister 5L</h3>
+        <div class="product-origin">📍 Peloponnes, Griechenland</div>
+        <div class="stars">★★★★★</div>
+        <p class="product-desc">Ideal für Restaurants, Caterer und Wiederverkäufer. Nativ Extra, kaltgepresst, im praktischen 5-Liter-Blecheimer.</p>
+        <div class="product-footer">
+          <div>
+            <div class="price">€ 38,00</div>
+            <div class="price-unit">pro 5L Kanister</div>
+          </div>
+          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img" style="background:#fff8f0;">
+        🌿
+      </div>
+      <div class="product-body">
+        <h3>Türkisches Ayvalik Öl</h3>
+        <div class="product-origin">📍 Ayvalik, Türkei</div>
+        <div class="stars">★★★★☆</div>
+        <p class="product-desc">Aus der Ayvalik-Olivensorte. Goldene Farbe, sanftes Aroma, leicht süßlich. Hervorragend für Brot und Antipasti.</p>
+        <div class="product-footer">
+          <div>
+            <div class="price">€ 7,50</div>
+            <div class="price-unit">pro 750ml Flasche</div>
+          </div>
+          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img" style="background:#f0f8ff;">
+        💎
+        <span class="badge-label gold">Exklusiv</span>
+      </div>
+      <div class="product-body">
+        <h3>Athinolia Prestige</h3>
+        <div class="product-origin">📍 Lakonien, Griechenland</div>
+        <div class="stars">★★★★★</div>
+        <p class="product-desc">Rarität aus der seltenen Athinolia-Olive. Ausgezeichnet auf internationalen Messen. Limitierte Jahresproduktion.</p>
+        <div class="product-footer">
+          <div>
+            <div class="price">€ 19,90</div>
+            <div class="price-unit">pro 500ml Flasche</div>
+          </div>
+          <button class="add-btn" onclick="addToCart(this)">+ Warenkorb</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features-bg" id="vorteile">
+  <section style="padding: 4rem 2rem;">
+    <div class="section-title">
+      <h2>Warum OliveOro?</h2>
+      <p>Qualität, Vertrauen und Transparenz stehen bei uns an erster Stelle</p>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">🌿</div>
+        <h3>100% Natur</h3>
+        <p>Keine Zusatzstoffe, keine Konservierungsmittel – nur reines, naturbelassenes Olivenöl.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🏭</div>
+        <h3>Direkt vom Erzeuger</h3>
+        <p>Wir kaufen direkt bei kleinen Familienbetrieben – für beste Qualität und faire Preise.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔬</div>
+        <h3>Laborgeprüft</h3>
+        <p>Jede Charge wird auf Säuregehalt, Polyphenole und Reinheit geprüft.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📦</div>
+        <h3>Sicher verpackt</h3>
+        <p>Lichtgeschützte Flaschen und auslaufsichere Verpackung für den Transport.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🚚</div>
+        <h3>Schnelle Lieferung</h3>
+        <p>Versand innerhalb von 24 Stunden, Lieferung in 2–4 Werktagen deutschlandweit.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🤝</div>
+        <h3>Großhandel willkommen</h3>
+        <p>Spezielle Konditionen für Restaurants, Händler und gewerbliche Kunden.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- GROSSHANDEL -->
+<section id="grosshandel" style="background: #f5f0e8; border-radius: 16px; padding: 3rem; margin: 2rem auto; max-width: 1100px;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+    <div>
+      <h2 style="color: var(--green-dark); font-size: 1.8rem; margin-bottom: 1rem;">Großhandel & B2B</h2>
+      <p style="font-family: Arial, sans-serif; color: var(--gray); line-height: 1.7; margin-bottom: 1rem;">
+        Sie sind Restaurantbesitzer, Lebensmittelhändler oder Importeur? Wir bieten attraktive Großhandelskonditionen ab einer Mindestbestellung von 50 Litern.
+      </p>
+      <ul style="font-family: Arial, sans-serif; color: var(--gray); line-height: 2; padding-left: 1.5rem;">
+        <li>Eigenmarken-Abfüllung (White Label)</li>
+        <li>Gebinde von 5L bis 200L Fässer</li>
+        <li>Rahmenverträge & Lieferabonnements</li>
+        <li>Individuelle Etikettierung möglich</li>
+        <li>EU-Lieferung & Exportdokumente</li>
+      </ul>
+      <a href="#kontakt" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Jetzt anfragen</a>
+    </div>
+    <div style="text-align: center; font-size: 10rem; line-height: 1;">🫒</div>
+  </div>
+</section>
+
+<!-- ORDER / CONTACT FORM -->
+<div class="order-section" id="kontakt">
+  <h2>Bestellung & Kontakt</h2>
+  <p>Füllen Sie das Formular aus – wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+
+  <form class="order-form" onsubmit="handleSubmit(event)">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Vorname *</label>
+        <input type="text" placeholder="Max" required>
+      </div>
+      <div class="form-group">
+        <label>Nachname *</label>
+        <input type="text" placeholder="Mustermann" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>E-Mail-Adresse *</label>
+      <input type="email" placeholder="max@beispiel.de" required>
+    </div>
+    <div class="form-group">
+      <label>Telefon (optional)</label>
+      <input type="tel" placeholder="+49 123 456789">
+    </div>
+    <div class="form-group">
+      <label>Interesse an *</label>
+      <select required>
+        <option value="">-- Bitte wählen --</option>
+        <option>Privatbestellung (Einzelflaschen)</option>
+        <option>Großhandel / B2B</option>
+        <option>Eigenmarke / White Label</option>
+        <option>Partnerprogramm / Wiederverkauf</option>
+        <option>Sonstiges</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Nachricht / Bestelldetails</label>
+      <textarea placeholder="Welches Produkt interessiert Sie? Welche Menge? Haben Sie Fragen?"></textarea>
+    </div>
+    <button type="submit" class="submit-btn">✉️ Anfrage absenden</button>
+  </form>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>🫒 OliveOro</h4>
+      <p>Ihr Spezialist für Premium-Olivenöl aus dem Mittelmeerraum. Qualität, die man schmeckt.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Produkte</h4>
+      <a href="#produkte">Nativ Extra Olivenöl</a>
+      <a href="#produkte">Bio Olivenöl</a>
+      <a href="#produkte">Großgebinde 5L</a>
+      <a href="#grosshandel">Großhandel</a>
+    </div>
+    <div class="footer-col">
+      <h4>Unternehmen</h4>
+      <a href="#">Über uns</a>
+      <a href="#">Qualitätsversprechen</a>
+      <a href="#">Partnerbetriebe</a>
+      <a href="#">Impressum</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <p>📧 info@oliveoro.de</p>
+      <p>📞 +49 30 123 456 78</p>
+      <p>🕐 Mo–Fr: 9–17 Uhr</p>
+      <p>📍 Berlin, Deutschland</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 OliveOro GmbH – Alle Rechte vorbehalten | Datenschutz | AGB | Impressum</p>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+  let cartCount = 0;
+
+  function addToCart(btn) {
+    cartCount++;
+    document.getElementById('cart-count').textContent = cartCount;
+    showToast('✅ Produkt zum Warenkorb hinzugefügt!');
+    btn.textContent = '✓ Hinzugefügt';
+    btn.style.background = '#2d5a24';
+    setTimeout(() => {
+      btn.textContent = '+ Warenkorb';
+      btn.style.background = '';
+    }, 1800);
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    showToast('✅ Anfrage gesendet! Wir melden uns bald.');
+    e.target.reset();
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+
+</body>
+</html>
