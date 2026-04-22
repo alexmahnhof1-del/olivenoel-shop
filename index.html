@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zaitoun – Premium Olivenöl | Halal & Wissenschaftlich belegt</title>
+  <title>OliveOro – Premium Olivenöl | Wissenschaftlich belegt</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,9 +16,9 @@
       --border: #e8e8e8;
       --bg: #fafaf8;
       --white: #ffffff;
-      --green: #1e5c2f;
-      --green-light: #2d7a42;
-      --gold: #b8860b;
+      --green: #2d6a4f;
+      --green-light: #40916c;
+      --gold: #b5830a;
       --gold-light: #d4a017;
       --whatsapp: #25d366;
     }
@@ -50,7 +50,7 @@
       border-bottom: 1px solid var(--border);
       transition: box-shadow 0.3s;
     }
-    nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
@@ -71,14 +71,14 @@
     }
     .nav-links a:hover { color: var(--green); }
     .nav-cta {
-      background: var(--green);
+      background: var(--green) !important;
       color: white !important;
       padding: 0.5rem 1.3rem;
       border-radius: 50px;
       font-size: 0.85rem !important;
       transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--green-light) !important; color: white !important; }
+    .nav-cta:hover { background: var(--green-light) !important; }
 
     /* ─── HERO ─── */
     .hero {
@@ -100,7 +100,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(10,30,15,0.88) 0%, rgba(10,30,15,0.5) 55%, rgba(10,30,15,0.1) 100%);
+      background: linear-gradient(90deg, rgba(8,25,12,0.87) 0%, rgba(8,25,12,0.48) 55%, rgba(8,25,12,0.1) 100%);
     }
     .hero-content {
       position: relative;
@@ -114,18 +114,17 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.88);
       padding: 0.4rem 1rem;
       border-radius: 50px;
-      font-size: 0.78rem;
+      font-size: 0.77rem;
       font-weight: 500;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       margin-bottom: 1.5rem;
     }
-    .hero-tag::before { content: '☪️'; font-size: 0.9rem; }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.8rem, 6vw, 5rem);
@@ -133,12 +132,12 @@
       color: white;
       line-height: 1.1;
       margin-bottom: 1.5rem;
-      max-width: 620px;
+      max-width: 640px;
     }
-    .hero h1 em { color: var(--gold-light); font-style: italic; }
+    .hero h1 em { color: #c8e6a0; font-style: italic; }
     .hero p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.8);
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.78);
       max-width: 480px;
       line-height: 1.75;
       margin-bottom: 2.5rem;
@@ -165,16 +164,14 @@
     .btn-outline { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.5); }
     .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
     .btn-green { background: var(--green); color: white; }
-    .btn-green:hover { background: var(--green-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(30,92,47,0.3); }
-    .btn-gold { background: var(--gold); color: white; }
-    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-green:hover { background: var(--green-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(45,106,79,0.3); }
     .hero-scroll {
       position: absolute;
       bottom: 2.5rem;
       left: 50%;
       transform: translateX(-50%);
-      color: rgba(255,255,255,0.5);
-      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.75rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       display: flex;
@@ -185,7 +182,7 @@
     .scroll-line {
       width: 1px;
       height: 40px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+      background: linear-gradient(to bottom, rgba(255,255,255,0.45), transparent);
       animation: scrollPulse 2s ease-in-out infinite;
     }
     @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
@@ -196,7 +193,6 @@
       padding: 1.5rem 2.5rem;
       display: flex;
       justify-content: center;
-      gap: 0;
     }
     .stat-item {
       text-align: center;
@@ -209,13 +205,13 @@
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
       font-weight: 700;
-      color: var(--gold-light);
+      color: #c8e6a0;
       line-height: 1;
       margin-bottom: 0.25rem;
     }
-    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.7); font-weight: 400; letter-spacing: 0.5px; }
+    .stat-label { font-size: 0.77rem; color: rgba(255,255,255,0.65); font-weight: 400; letter-spacing: 0.3px; }
 
-    /* ─── SECTION COMMONS ─── */
+    /* ─── SECTION ─── */
     .section { padding: 7rem 2.5rem; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
     .section-label {
@@ -246,7 +242,7 @@
       font-weight: 300;
     }
 
-    /* ─── ABOUT / IMAGE GRID ─── */
+    /* ─── ABOUT ─── */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -257,7 +253,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
-      position: relative;
     }
     .about-img {
       border-radius: 12px;
@@ -265,45 +260,34 @@
       aspect-ratio: 3/4;
     }
     .about-img:first-child { margin-top: 2.5rem; }
-    .about-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s; }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; display: block; }
     .about-img:hover img { transform: scale(1.04); }
-    .about-text .section-label { justify-content: flex-start; }
-    .about-quote {
-      margin: 2rem 0;
-      padding: 1.5rem;
-      border-left: 3px solid var(--gold);
-      background: #faf9f5;
-      border-radius: 0 8px 8px 0;
-    }
-    .about-quote p {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: var(--dark);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-    .about-quote cite { font-size: 0.8rem; color: var(--gray); font-style: normal; display: block; margin-top: 0.5rem; }
     .about-features { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-    .about-feat {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
+    .about-feat { display: flex; align-items: flex-start; gap: 1rem; }
     .about-feat-icon {
-      width: 42px;
-      height: 42px;
-      background: #f0f7f2;
+      width: 42px; height: 42px;
+      background: #f0f7f4;
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
     }
     .about-feat-text h4 { font-size: 0.92rem; font-weight: 600; color: var(--black); margin-bottom: 0.15rem; }
     .about-feat-text p { font-size: 0.84rem; color: var(--gray); line-height: 1.5; }
 
-    /* ─── HEALTH SECTION ─── */
+    /* ─── GALLERY ─── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3.5rem;
+    }
+    .gallery-item { border-radius: 12px; overflow: hidden; }
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 1; transition: transform 0.6s; }
+    .gallery-item:first-child img { aspect-ratio: auto; height: 100%; }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    /* ─── HEALTH ─── */
     .health-section { background: var(--bg); }
     .health-intro {
       display: grid;
@@ -312,35 +296,27 @@
       align-items: start;
       margin-bottom: 5rem;
     }
-    .health-img {
-      border-radius: 16px;
-      overflow: hidden;
-      aspect-ratio: 4/5;
-    }
-    .health-img img { width: 100%; height: 100%; object-fit: cover; }
-    .health-benefits { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+    .health-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/5; }
+    .health-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .health-benefits { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
     .benefit-card {
       background: white;
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 1.4rem;
       border: 1px solid var(--border);
       transition: box-shadow 0.3s;
     }
     .benefit-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-    .benefit-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.6rem; }
-    .benefit-icon { font-size: 1.5rem; }
-    .benefit-title { font-size: 0.95rem; font-weight: 600; color: var(--black); }
+    .benefit-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; }
+    .benefit-icon { font-size: 1.4rem; }
+    .benefit-title { font-size: 0.93rem; font-weight: 600; color: var(--black); }
     .benefit-badge {
       margin-left: auto;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      background: #e8f5ec;
-      color: var(--green);
-      padding: 0.2rem 0.6rem;
-      border-radius: 50px;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.5px;
+      background: #e6f2eb; color: var(--green);
+      padding: 0.2rem 0.6rem; border-radius: 50px;
     }
-    .benefit-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+    .benefit-desc { font-size: 0.84rem; color: var(--gray); line-height: 1.6; }
 
     /* ─── STUDIES ─── */
     .studies-grid {
@@ -354,55 +330,34 @@
       border-radius: 14px;
       padding: 2rem;
       border: 1px solid var(--border);
-      position: relative;
       transition: all 0.3s;
     }
-    .study-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); transform: translateY(-3px); }
+    .study-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.07); transform: translateY(-3px); }
     .study-journal {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 0.8rem;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--green); margin-bottom: 0.8rem;
     }
     .study-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--black);
-      margin-bottom: 0.8rem;
-      line-height: 1.4;
-    }
-    .study-finding {
-      font-size: 0.85rem;
-      color: var(--gray);
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
+      font-size: 1rem; font-weight: 700;
+      color: var(--black); margin-bottom: 0.8rem; line-height: 1.4;
     }
     .study-stat {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.3rem;
-      padding: 0.5rem 1rem;
-      background: #f0f7f2;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      display: inline-flex; align-items: baseline; gap: 0.3rem;
+      padding: 0.5rem 1rem; background: #f0f7f4;
+      border-radius: 8px; margin-bottom: 1rem;
     }
     .study-stat-num {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1;
+      font-size: 1.8rem; font-weight: 700; color: var(--green); line-height: 1;
     }
-    .study-stat-unit { font-size: 0.85rem; color: var(--gray); }
+    .study-stat-unit { font-size: 0.83rem; color: var(--gray); }
+    .study-finding { font-size: 0.84rem; color: var(--gray); line-height: 1.65; margin-bottom: 1.2rem; }
     .study-meta {
-      font-size: 0.75rem;
-      color: var(--gray-light);
+      font-size: 0.74rem; color: var(--gray-light);
       border-top: 1px solid var(--border);
-      padding-top: 1rem;
-      margin-top: 1rem;
+      padding-top: 1rem; margin-top: 1rem; line-height: 1.7;
     }
     .study-meta strong { color: var(--gray); }
 
@@ -419,97 +374,53 @@
       overflow: hidden;
       border: 1px solid var(--border);
       transition: all 0.3s;
-      cursor: pointer;
     }
-    .product-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
+    .product-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.09); transform: translateY(-4px); }
     .product-img-wrap {
       position: relative;
       aspect-ratio: 4/3;
       overflow: hidden;
       background: #f5f5f0;
     }
-    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; display: block; }
     .product-card:hover .product-img-wrap img { transform: scale(1.05); }
     .product-badge {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      padding: 0.3rem 0.8rem;
-      border-radius: 50px;
+      position: absolute; top: 1rem; left: 1rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;
+      padding: 0.3rem 0.8rem; border-radius: 50px;
     }
-    .badge-halal { background: var(--green); color: white; }
-    .badge-bestseller { background: var(--gold); color: white; }
-    .badge-neu { background: var(--black); color: white; }
+    .badge-green { background: var(--green); color: white; }
+    .badge-gold { background: var(--gold); color: white; }
+    .badge-black { background: var(--black); color: white; }
     .product-body { padding: 1.5rem; }
-    .product-origin { font-size: 0.75rem; color: var(--gray-light); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .product-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--black); margin-bottom: 0.4rem; }
-    .product-name-ar { font-size: 0.85rem; color: var(--gold); margin-bottom: 0.8rem; direction: rtl; font-family: 'Playfair Display', serif; }
+    .product-origin { font-size: 0.74rem; color: var(--gray-light); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .product-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--black); margin-bottom: 0.6rem; }
+    .product-health-tag {
+      font-size: 0.72rem; background: #f0f7f4; color: var(--green);
+      padding: 0.2rem 0.6rem; border-radius: 50px; font-weight: 500;
+      margin-bottom: 0.8rem; display: inline-block;
+    }
     .product-desc { font-size: 0.83rem; color: var(--gray); line-height: 1.6; margin-bottom: 1.2rem; }
-    .product-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .product-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1rem; border-top: 1px solid var(--border);
+    }
     .product-price { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--black); }
-    .product-price small { font-size: 0.75rem; color: var(--gray); font-family: 'Inter', sans-serif; font-weight: 400; }
+    .product-price small { font-size: 0.74rem; color: var(--gray); font-family: 'Inter', sans-serif; font-weight: 400; }
     .add-to-cart {
-      background: var(--green);
-      color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 50px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: all 0.2s;
+      background: var(--green); color: white; border: none;
+      padding: 0.6rem 1.2rem; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600; cursor: pointer;
+      font-family: 'Inter', sans-serif; transition: background 0.2s;
     }
     .add-to-cart:hover { background: var(--green-light); }
-    .product-health-tag {
-      font-size: 0.72rem;
-      background: #f0f7f2;
-      color: var(--green);
-      padding: 0.2rem 0.6rem;
-      border-radius: 50px;
-      font-weight: 500;
-      margin-bottom: 0.8rem;
-      display: inline-block;
-    }
-
-    /* ─── IMAGE GALLERY ─── */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: auto auto;
-      gap: 1rem;
-      margin-top: 3.5rem;
-    }
-    .gallery-item {
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-    }
-    .gallery-item:first-child {
-      grid-column: span 2;
-      grid-row: span 2;
-      aspect-ratio: 1;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s;
-      aspect-ratio: 1;
-    }
-    .gallery-item:hover img { transform: scale(1.04); }
-    .gallery-item:first-child img { aspect-ratio: auto; height: 100%; }
 
     /* ─── VIDEOS ─── */
-    .videos-section { background: var(--black); color: white; }
-    .videos-section .section-label { color: var(--gold-light); }
-    .videos-section .section-label::before { background: var(--gold-light); }
+    .videos-section { background: #0f0f0f; color: white; }
+    .videos-section .section-label { color: #c8e6a0; }
+    .videos-section .section-label::before { background: #c8e6a0; }
     .videos-section h2.section-title { color: white; }
-    .videos-section .section-sub { color: rgba(255,255,255,0.6); }
+    .videos-section .section-sub { color: rgba(255,255,255,0.55); }
     .videos-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -517,90 +428,52 @@
       margin-top: 3.5rem;
     }
     .video-card {
-      border-radius: 14px;
-      overflow: hidden;
-      position: relative;
-      aspect-ratio: 16/10;
-      cursor: pointer;
-      background: #1a1a1a;
+      border-radius: 14px; overflow: hidden;
+      position: relative; aspect-ratio: 16/10;
+      cursor: pointer; background: #1a1a1a;
+      text-decoration: none;
     }
     .video-thumb {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.7;
-      transition: opacity 0.3s, transform 0.6s;
+      width: 100%; height: 100%; object-fit: cover;
+      opacity: 0.65; transition: opacity 0.3s, transform 0.6s; display: block;
     }
-    .video-card:hover .video-thumb { opacity: 0.5; transform: scale(1.04); }
+    .video-card:hover .video-thumb { opacity: 0.45; transform: scale(1.04); }
     .video-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem;
     }
     .play-btn {
-      width: 60px;
-      height: 60px;
-      background: rgba(255,255,255,0.95);
+      width: 58px; height: 58px;
+      background: rgba(255,255,255,0.93);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s, background 0.3s;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s;
     }
-    .video-card:hover .play-btn { transform: scale(1.1); background: white; }
+    .video-card:hover .play-btn { transform: scale(1.1); }
     .play-btn svg { width: 20px; height: 20px; fill: var(--green); margin-left: 3px; }
-    .video-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: white;
-      text-align: center;
-      padding: 0 1rem;
-    }
-    .video-label {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.6);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+    .video-label { font-size: 0.7rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1.5px; }
+    .video-title { font-size: 0.88rem; font-weight: 600; color: white; text-align: center; padding: 0 1rem; }
 
-    /* ─── PROCESS SECTION ─── */
+    /* ─── PROCESS ─── */
     .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 3.5rem;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2rem; margin-top: 3.5rem;
       position: relative;
     }
     .process-grid::before {
       content: '';
-      position: absolute;
-      top: 28px;
-      left: 12%;
-      right: 12%;
-      height: 1px;
-      background: var(--border);
-      z-index: 0;
+      position: absolute; top: 28px; left: 12%; right: 12%;
+      height: 1px; background: var(--border); z-index: 0;
     }
     .process-step { text-align: center; position: relative; z-index: 1; }
     .process-num {
-      width: 56px;
-      height: 56px;
-      background: var(--green);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
+      width: 56px; height: 56px;
+      background: var(--green); color: white; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700;
       margin: 0 auto 1.2rem;
-      border: 4px solid white;
-      box-shadow: 0 0 0 1px var(--border);
+      border: 4px solid white; box-shadow: 0 0 0 1px var(--border);
     }
     .process-step h4 { font-size: 0.92rem; font-weight: 600; color: var(--black); margin-bottom: 0.4rem; }
     .process-step p { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
@@ -608,42 +481,26 @@
     /* ─── CONTACT ─── */
     .contact-section { background: var(--bg); }
     .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
     }
     .contact-info h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      line-height: 1.3;
+      font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.3;
     }
     .contact-info p { color: var(--gray); line-height: 1.75; margin-bottom: 2rem; font-size: 0.95rem; }
     .contact-methods { display: flex; flex-direction: column; gap: 1rem; }
     .contact-method {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.2rem 1.5rem;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--black);
-      transition: all 0.25s;
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.2rem 1.5rem; background: white;
+      border: 1px solid var(--border); border-radius: 12px;
+      text-decoration: none; color: var(--black); transition: all 0.25s;
     }
-    .contact-method:hover { border-color: var(--green); box-shadow: 0 4px 15px rgba(30,92,47,0.1); }
+    .contact-method:hover { border-color: var(--green); box-shadow: 0 4px 15px rgba(45,106,79,0.1); }
     .contact-method-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
     }
     .icon-wa { background: #dcf8e8; }
     .icon-tel { background: #e8edf7; }
@@ -651,31 +508,20 @@
     .contact-method-text h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.1rem; }
     .contact-method-text p { font-size: 0.82rem; color: var(--gray); }
     .contact-form {
-      background: white;
-      border-radius: 16px;
-      padding: 2.5rem;
-      border: 1px solid var(--border);
+      background: white; border-radius: 16px;
+      padding: 2.5rem; border: 1px solid var(--border);
     }
-    .contact-form h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-    }
+    .contact-form h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1.5rem; }
     .form-group { margin-bottom: 1.2rem; }
     .form-group label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--dark); margin-bottom: 0.4rem; }
     .form-group input,
     .form-group select,
     .form-group textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-family: 'Inter', sans-serif;
-      color: var(--black);
-      background: white;
-      transition: border-color 0.2s;
-      outline: none;
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      font-size: 0.9rem; font-family: 'Inter', sans-serif;
+      color: var(--black); background: white;
+      transition: border-color 0.2s; outline: none;
     }
     .form-group input:focus,
     .form-group select:focus,
@@ -685,77 +531,52 @@
 
     /* ─── WHATSAPP FLOAT ─── */
     .wa-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 300;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      background: var(--whatsapp);
-      color: white;
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 300;
+      display: flex; align-items: center; gap: 0.8rem;
+      background: var(--whatsapp); color: white;
       padding: 0.8rem 1.4rem 0.8rem 1rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      border-radius: 50px; text-decoration: none;
+      font-size: 0.88rem; font-weight: 600;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
       transition: all 0.3s;
       animation: waPulse 3s ease-in-out infinite;
     }
-    .wa-float:hover { background: #20ba58; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
+    .wa-float:hover { background: #1fb855; transform: translateY(-3px); }
     .wa-float svg { width: 22px; height: 22px; fill: white; }
-    @keyframes waPulse { 0%,100%{box-shadow: 0 4px 20px rgba(37,211,102,0.4)} 50%{box-shadow: 0 4px 30px rgba(37,211,102,0.7)} }
+    @keyframes waPulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35)} 50%{box-shadow:0 4px 30px rgba(37,211,102,0.65)} }
 
     /* ─── FOOTER ─── */
-    footer { background: var(--black); color: rgba(255,255,255,0.6); padding: 4rem 2.5rem 2rem; }
+    footer { background: #0a0a0a; color: rgba(255,255,255,0.55); padding: 4rem 2.5rem 2rem; }
     .footer-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
     }
     .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif; font-size: 1.8rem;
+      font-weight: 700; color: white; margin-bottom: 1rem;
     }
     .footer-logo span { color: var(--gold-light); }
     .footer-about { font-size: 0.85rem; line-height: 1.75; max-width: 260px; }
-    .footer-ar { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--gold-light); direction: rtl; margin-top: 0.5rem; }
-    footer h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: white; margin-bottom: 1.2rem; }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; display: block; margin-bottom: 0.6rem; transition: color 0.2s; }
+    footer h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: white; margin-bottom: 1.2rem; }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.85rem; display: block; margin-bottom: 0.6rem; transition: color 0.2s; }
     footer a:hover { color: white; }
     .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      max-width: 1200px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       font-size: 0.8rem;
     }
 
     /* ─── TOAST ─── */
     #toast {
-      position: fixed;
-      bottom: 7rem;
-      right: 2rem;
-      background: var(--black);
-      color: white;
-      padding: 0.9rem 1.5rem;
-      border-radius: 10px;
-      font-size: 0.88rem;
-      opacity: 0;
-      transform: translateY(10px);
+      position: fixed; bottom: 7rem; right: 2rem;
+      background: var(--black); color: white;
+      padding: 0.9rem 1.5rem; border-radius: 10px;
+      font-size: 0.88rem; opacity: 0; transform: translateY(10px);
       transition: opacity 0.3s, transform 0.3s;
-      z-index: 400;
-      border-left: 3px solid var(--green);
+      z-index: 400; border-left: 3px solid var(--green);
     }
     #toast.show { opacity: 1; transform: translateY(0); }
 
@@ -784,22 +605,20 @@
 </head>
 <body>
 
-<!-- WHATSAPP FLOATING BUTTON -->
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/4915218585508" target="_blank" class="wa-float" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span>WhatsApp Bestellung</span>
 </a>
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">Zait<span>oun</span></a>
+  <a href="#" class="nav-logo">Olive<span>Oro</span></a>
   <ul class="nav-links">
     <li><a href="#ueber-uns">Über uns</a></li>
     <li><a href="#gesundheit">Gesundheit</a></li>
     <li><a href="#produkte">Produkte</a></li>
-    <li><a href="#ernte">Ernte</a></li>
+    <li><a href="#ernte">Herstellung</a></li>
     <li><a href="#kontakt" class="nav-cta">Jetzt bestellen</a></li>
   </ul>
 </nav>
@@ -808,13 +627,13 @@
 <section class="hero">
   <div class="hero-img"></div>
   <div class="hero-content">
-    <div class="hero-tag">100% Halal zertifiziert</div>
+    <div class="hero-tag">Kaltgepresst · Nativ Extra · Premium</div>
     <h1>Das <em>gesündeste</em> Öl der Welt. Direkt zu Ihnen.</h1>
-    <p>Wissenschaftlich bewiesene Gesundheitsvorteile. Kaltgepresst aus jahrhundertealten Olivenbäumen islamischer Länder.</p>
+    <p>Wissenschaftlich belegte Gesundheitsvorteile. Kaltgepresst aus jahrhundertealten Olivenbäumen rund ums Mittelmeer.</p>
     <div class="hero-btns">
       <a href="#produkte" class="btn btn-white">Produkte entdecken</a>
       <a href="https://wa.me/4915218585508" target="_blank" class="btn btn-outline">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp Anfrage
       </a>
     </div>
@@ -825,7 +644,7 @@
   </div>
 </section>
 
-<!-- STATS BAR -->
+<!-- STATS -->
 <div class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">30%</div>
@@ -840,12 +659,12 @@
     <div class="stat-label">Zufriedene Kunden</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">100%</div>
-    <div class="stat-label">Halal zertifiziert</div>
+    <div class="stat-num">24h</div>
+    <div class="stat-label">Pressung nach der Ernte</div>
   </div>
 </div>
 
-<!-- ÜBER UNS / IMAGES -->
+<!-- ÜBER UNS -->
 <section class="section" id="ueber-uns">
   <div class="section-inner">
     <div class="about-grid">
@@ -857,34 +676,30 @@
           <img src="https://images.unsplash.com/photo-1596357395217-80b83e4f0a35?w=600&q=85&auto=format&fit=crop" alt="Olivenernte" loading="lazy">
         </div>
       </div>
-      <div class="about-text">
+      <div>
         <div class="section-label">Unsere Geschichte</div>
-        <h2 class="section-title">Vom gesegneten Baum direkt auf Ihren Tisch</h2>
-        <div class="about-quote">
-          <p>„Esset Olivenöl und salbt euch damit, denn es stammt von einem gesegneten Baum."</p>
-          <cite>Prophet Muhammad ﷺ — Tirmidhi & Ibn Majah</cite>
-        </div>
-        <p class="section-sub">Wir handeln ausschließlich mit halal-zertifiziertem Olivenöl aus muslimischen Familienbetrieben in Palästina, Marokko, Tunesien und der Türkei. Jede Flasche ist ein Stück Tradition.</p>
+        <h2 class="section-title">Vom Baum direkt auf Ihren Tisch</h2>
+        <p class="section-sub">Wir handeln mit Premium-Olivenöl aus sorgfältig ausgewählten Familienbetrieben rund ums Mittelmeer – transparent, fair und von höchster Qualität.</p>
         <div class="about-features">
-          <div class="about-feat">
-            <div class="about-feat-icon">☪️</div>
-            <div class="about-feat-text">
-              <h4>Halal zertifiziert</h4>
-              <p>Offizielle Halal-Zertifizierung für alle Produkte und Prozesse.</p>
-            </div>
-          </div>
           <div class="about-feat">
             <div class="about-feat-icon">🌿</div>
             <div class="about-feat-text">
-              <h4>Kaltgepresst in 24h</h4>
-              <p>Oliven werden innerhalb von 24 Stunden nach der Ernte gepresst – für maximale Nährstoffe.</p>
+              <h4>Kaltgepresst in 24 Stunden</h4>
+              <p>Oliven werden innerhalb von 24h nach der Ernte gepresst – für maximale Nährstoffe und Polyphenole.</p>
             </div>
           </div>
           <div class="about-feat">
             <div class="about-feat-icon">🔬</div>
             <div class="about-feat-text">
               <h4>Laborgeprüfte Qualität</h4>
-              <p>Jede Charge wird auf Polyphenole, Säuregehalt und Reinheit analysiert.</p>
+              <p>Jede Charge wird auf Säuregehalt, Polyphenole und Reinheit in akkreditierten Laboren analysiert.</p>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon">🤝</div>
+            <div class="about-feat-text">
+              <h4>Direkt vom Erzeuger</h4>
+              <p>Wir kaufen direkt bei Familienbetrieben – ohne Zwischenhändler, für faire Preise und beste Qualität.</p>
             </div>
           </div>
         </div>
@@ -893,7 +708,7 @@
   </div>
 </section>
 
-<!-- BILDER GALERIE -->
+<!-- GALERIE -->
 <section style="padding: 0 2.5rem 5rem;">
   <div class="section-inner">
     <div class="section-label">Einblicke</div>
@@ -909,7 +724,7 @@
         <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?w=600&q=85&auto=format&fit=crop" alt="Olivenbäume" loading="lazy">
       </div>
       <div class="gallery-item" style="aspect-ratio:1">
-        <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=600&q=85&auto=format&fit=crop" alt="Olivenöl gießen" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=600&q=85&auto=format&fit=crop" alt="Olivenöl" loading="lazy">
       </div>
       <div class="gallery-item" style="aspect-ratio:1">
         <img src="https://images.unsplash.com/photo-1620574387654-16b5960b7254?w=600&q=85&auto=format&fit=crop" alt="Olivenöl Flasche" loading="lazy">
@@ -929,7 +744,7 @@
         <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=700&q=85&auto=format&fit=crop" alt="Olivenöl Gesundheit" loading="lazy">
       </div>
       <div>
-        <p class="section-sub" style="margin-bottom: 2rem;">Olivenöl ist nicht nur ein Nahrungsmittel – es ist Medizin. Hunderte wissenschaftliche Studien belegen seine außergewöhnlichen Gesundheitsvorteile.</p>
+        <p class="section-sub" style="margin-bottom: 2rem;">Olivenöl ist nicht nur ein Nahrungsmittel – es ist Medizin. Hunderte wissenschaftlicher Studien belegen seine außergewöhnlichen Gesundheitsvorteile.</p>
         <div class="health-benefits">
           <div class="benefit-card">
             <div class="benefit-header">
@@ -937,7 +752,7 @@
               <div class="benefit-title">Herzgesundheit</div>
               <span class="benefit-badge">Stark belegt</span>
             </div>
-            <div class="benefit-desc">Oleocanthal und Polyphenole senken LDL-Cholesterin, verringern Entzündungen und schützen die Blutgefäße vor Arteriosklerose.</div>
+            <div class="benefit-desc">Oleocanthal und Polyphenole senken LDL-Cholesterin, reduzieren Entzündungen und schützen die Gefäßwände vor Arteriosklerose.</div>
           </div>
           <div class="benefit-card">
             <div class="benefit-header">
@@ -953,7 +768,7 @@
               <div class="benefit-title">Anti-Entzündung</div>
               <span class="benefit-badge">Stark belegt</span>
             </div>
-            <div class="benefit-desc">Oleocanthal wirkt wie Ibuprofen – hemmt die gleichen Entzündungsenzyme COX-1 und COX-2 (Nature, 2005).</div>
+            <div class="benefit-desc">Oleocanthal wirkt wie Ibuprofen – hemmt die gleichen Enzyme COX-1 und COX-2, ohne Nebenwirkungen (Nature, 2005).</div>
           </div>
           <div class="benefit-card">
             <div class="benefit-header">
@@ -967,9 +782,9 @@
       </div>
     </div>
 
-    <!-- STUDIES -->
-    <div class="section-label" style="margin-top: 2rem;">Wissenschaftliche Belege</div>
-    <h2 class="section-title" style="font-size: 1.8rem;">Studien & Forschung</h2>
+    <!-- STUDIEN -->
+    <div class="section-label" style="margin-top:1rem;">Wissenschaftliche Belege</div>
+    <h2 class="section-title" style="font-size:1.8rem;">Studien & Forschung</h2>
     <div class="studies-grid">
 
       <div class="study-card">
@@ -977,15 +792,10 @@
         <div class="study-title">PREDIMED-Studie: Mediterrane Diät mit Olivenöl</div>
         <div class="study-stat">
           <span class="study-stat-num">30%</span>
-          <span class="study-stat-unit">weniger kardiovaskuläre Ereignisse</span>
+          <span class="study-stat-unit">weniger Herzinfarkte & Schlaganfälle</span>
         </div>
-        <div class="study-finding">
-          7.447 Hochrisiko-Patienten über 4,8 Jahre untersucht. Die Gruppe mit extra nativem Olivenöl zeigte eine 30%ige Reduktion von Herzinfarkten und Schlaganfällen.
-        </div>
-        <div class="study-meta">
-          <strong>Autoren:</strong> Estruch R, Ros E et al. · Universität Barcelona<br>
-          <strong>Teilnehmer:</strong> 7.447 · <strong>Dauer:</strong> 4,8 Jahre
-        </div>
+        <div class="study-finding">7.447 Hochrisiko-Patienten über 4,8 Jahre untersucht. Gruppe mit extra nativem Olivenöl zeigte 30% weniger kardiovaskuläre Ereignisse.</div>
+        <div class="study-meta"><strong>Autoren:</strong> Estruch R, Ros E et al. · Universität Barcelona<br><strong>Teilnehmer:</strong> 7.447 · <strong>Dauer:</strong> 4,8 Jahre</div>
       </div>
 
       <div class="study-card">
@@ -993,15 +803,10 @@
         <div class="study-title">Oleocanthal: Natürliches Anti-Entzündungsmittel</div>
         <div class="study-stat">
           <span class="study-stat-num">= Ibu</span>
-          <span class="study-stat-unit">profen</span>
+          <span class="study-stat-unit">profen Wirkung</span>
         </div>
-        <div class="study-finding">
-          Oleocanthal in nativem Olivenöl hemmt die gleichen Enzyme (COX-1, COX-2) wie das Schmerzmittel Ibuprofen – ohne Nebenwirkungen bei regelmäßiger Aufnahme.
-        </div>
-        <div class="study-meta">
-          <strong>Autoren:</strong> Beauchamp GK et al. · Monell Chemical Senses Center<br>
-          <strong>Veröffentlicht in:</strong> Nature, Vol. 437
-        </div>
+        <div class="study-finding">Oleocanthal hemmt die gleichen Enzyme (COX-1, COX-2) wie das Schmerzmittel Ibuprofen – ohne Nebenwirkungen bei regelmäßiger Aufnahme.</div>
+        <div class="study-meta"><strong>Autoren:</strong> Beauchamp GK et al. · Monell Chemical Senses Center<br><strong>Veröffentlicht in:</strong> Nature, Vol. 437</div>
       </div>
 
       <div class="study-card">
@@ -1011,13 +816,8 @@
           <span class="study-stat-num">40%</span>
           <span class="study-stat-unit">geringeres Alzheimer-Risiko</span>
         </div>
-        <div class="study-finding">
-          Oleocanthal fördert die Ausscheidung von Beta-Amyloid-Plaques aus dem Gehirn – dem Hauptverursacher von Alzheimer. Langzeitstudie zeigt 40% Risikoreduktion.
-        </div>
-        <div class="study-meta">
-          <strong>Autoren:</strong> Abuznait AH et al. · Temple University Philadelphia<br>
-          <strong>Methode:</strong> In-vivo Mausstudie & Humanbeobachtung
-        </div>
+        <div class="study-finding">Oleocanthal fördert die Ausscheidung von Beta-Amyloid-Plaques aus dem Gehirn – dem Hauptverursacher von Alzheimer. Langzeitstudie zeigt 40% Risikoreduktion.</div>
+        <div class="study-meta"><strong>Autoren:</strong> Abuznait AH et al. · Temple University Philadelphia</div>
       </div>
 
       <div class="study-card">
@@ -1027,13 +827,8 @@
           <span class="study-stat-num">+25%</span>
           <span class="study-stat-unit">nützliche Darmbakterien</span>
         </div>
-        <div class="study-finding">
-          Täglicher Konsum von nativem Olivenöl erhöht signifikant die Anzahl nützlicher Bifidobacterium- und Lactobacillus-Bakterien im Darm.
-        </div>
-        <div class="study-meta">
-          <strong>Autoren:</strong> Nataraj BH et al.<br>
-          <strong>Dauer:</strong> 12 Wochen · <strong>Teilnehmer:</strong> 220
-        </div>
+        <div class="study-finding">Täglicher Konsum von nativem Olivenöl erhöht signifikant die Anzahl nützlicher Bifidobacterium- und Lactobacillus-Bakterien im Darm.</div>
+        <div class="study-meta"><strong>Dauer:</strong> 12 Wochen · <strong>Teilnehmer:</strong> 220<br><strong>Autoren:</strong> Nataraj BH et al.</div>
       </div>
 
       <div class="study-card">
@@ -1043,13 +838,8 @@
           <span class="study-stat-num">16%</span>
           <span class="study-stat-unit">geringeres Diabetes-Risiko</span>
         </div>
-        <div class="study-finding">
-          Meta-Analyse von 29 Studien zeigt: Regelmäßiger Olivenöl-Konsum senkt das Risiko für Typ-2-Diabetes um 16% durch Verbesserung der Insulinsensitivität.
-        </div>
-        <div class="study-meta">
-          <strong>Meta-Analyse:</strong> 29 Studien · 15.784 Teilnehmer<br>
-          <strong>Autoren:</strong> Schwingshackl L et al.
-        </div>
+        <div class="study-finding">Meta-Analyse von 29 Studien zeigt: Olivenöl senkt das Risiko für Typ-2-Diabetes durch Verbesserung der Insulinsensitivität.</div>
+        <div class="study-meta"><strong>Meta-Analyse:</strong> 29 Studien · 15.784 Teilnehmer<br><strong>Autoren:</strong> Schwingshackl L et al.</div>
       </div>
 
       <div class="study-card">
@@ -1059,13 +849,8 @@
           <span class="study-stat-num">2 EL</span>
           <span class="study-stat-unit">täglich empfohlen</span>
         </div>
-        <div class="study-finding">
-          Die Weltgesundheitsorganisation empfiehlt Olivenöl als primäre Fettquelle für ein gesundes Herz-Kreislauf-System im Rahmen einer mediterranen Ernährungsweise.
-        </div>
-        <div class="study-meta">
-          <strong>Quelle:</strong> WHO Global Action Plan für Nicht-übertragbare Krankheiten<br>
-          <strong>Bestätigt durch:</strong> European Food Safety Authority (EFSA)
-        </div>
+        <div class="study-finding">Die Weltgesundheitsorganisation empfiehlt Olivenöl als primäre Fettquelle für ein gesundes Herz-Kreislauf-System.</div>
+        <div class="study-meta"><strong>Quelle:</strong> WHO Global Action Plan für NCDs<br><strong>Bestätigt durch:</strong> European Food Safety Authority (EFSA)</div>
       </div>
 
     </div>
@@ -1075,25 +860,24 @@
 <!-- PRODUKTE -->
 <section class="section" id="produkte">
   <div class="section-inner">
-    <div class="section-label">Halal Premium Sortiment</div>
+    <div class="section-label">Premium Sortiment</div>
     <h2 class="section-title">Unsere Produkte</h2>
-    <p class="section-sub">Direkt aus muslimischen Familienbetrieben – jede Flasche mit Herkunftsnachweis und Halal-Zertifikat.</p>
+    <p class="section-sub">Direkt von Familienbetrieben aus den besten Anbauregionen – jede Flasche mit Herkunftsnachweis und Laboranalyse.</p>
 
     <div class="products-grid">
 
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1620574387654-16b5960b7254?w=600&q=85&auto=format&fit=crop" alt="Palästinensisches Olivenöl" loading="lazy">
-          <span class="product-badge badge-bestseller">Bestseller</span>
+          <img src="https://images.unsplash.com/photo-1620574387654-16b5960b7254?w=600&q=85&auto=format&fit=crop" alt="Griechisches Olivenöl" loading="lazy">
+          <span class="product-badge badge-gold">Bestseller</span>
         </div>
         <div class="product-body">
-          <div class="product-origin">Palästina · Ramallah</div>
-          <div class="product-name">Palästinensisches Nativ Extra</div>
-          <div class="product-name-ar">زيت زيتون فلسطيني</div>
-          <div class="product-health-tag">🫀 Herzschützend · &lt;0,2% Säure</div>
-          <div class="product-desc">Aus uralten Olivenbäumen des Heiligen Landes. Höchster Polyphenolgehalt. Kaltgepresst innerhalb 24h nach der Ernte.</div>
+          <div class="product-origin">Griechenland · Kreta</div>
+          <div class="product-name">Kretisches Nativ Extra</div>
+          <div class="product-health-tag">❤️ Herzschützend · &lt;0,2% Säure</div>
+          <div class="product-desc">Aus der Koroneiki-Olive. Intensiver Geschmack, höchster Polyphenolgehalt. Kaltgepresst innerhalb 24h nach der Ernte.</div>
           <div class="product-footer">
-            <div class="product-price">€ 11,90 <small>/ 750ml</small></div>
+            <div class="product-price">€ 9,90 <small>/ 750ml</small></div>
             <button class="add-to-cart" onclick="addToCart(this)">+ Warenkorb</button>
           </div>
         </div>
@@ -1101,17 +885,16 @@
 
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1596591453048-8fcb1c2c4e2e?w=600&q=85&auto=format&fit=crop" alt="Marokkanisches Olivenöl" loading="lazy">
-          <span class="product-badge badge-halal">☪️ Halal</span>
+          <img src="https://images.unsplash.com/photo-1596591453048-8fcb1c2c4e2e?w=600&q=85&auto=format&fit=crop" alt="Toskana Olivenöl" loading="lazy">
+          <span class="product-badge badge-green">Bio zertifiziert</span>
         </div>
         <div class="product-body">
-          <div class="product-origin">Marokko · Meknès</div>
-          <div class="product-name">Marokkanisches Bio-Öl</div>
-          <div class="product-name-ar">زيت الزيتون المغربي</div>
-          <div class="product-health-tag">🧠 Gehirngesundheit · Bio-zertifiziert</div>
-          <div class="product-desc">EU-Bio-zertifiziert. Fruchtig-mild, goldene Farbe. Reich an Oleocanthal für natürlichen Entzündungsschutz.</div>
+          <div class="product-origin">Italien · Toskana</div>
+          <div class="product-name">Toskana Bio-Öl</div>
+          <div class="product-health-tag">🧠 Gehirngesundheit · Bio zertifiziert</div>
+          <div class="product-desc">EU-Bio-zertifiziert aus der Frantoio-Olive. Fruchtig-mild, goldene Farbe. Reich an Oleocanthal.</div>
           <div class="product-footer">
-            <div class="product-price">€ 9,50 <small>/ 750ml</small></div>
+            <div class="product-price">€ 12,50 <small>/ 750ml</small></div>
             <button class="add-to-cart" onclick="addToCart(this)">+ Warenkorb</button>
           </div>
         </div>
@@ -1119,17 +902,16 @@
 
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=85&auto=format&fit=crop" alt="Tunesisches Olivenöl" loading="lazy">
-          <span class="product-badge badge-halal">☪️ Halal</span>
+          <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=85&auto=format&fit=crop" alt="Spanisches Olivenöl" loading="lazy">
+          <span class="product-badge badge-green">Premium</span>
         </div>
         <div class="product-body">
-          <div class="product-origin">Tunesien · Sfax</div>
-          <div class="product-name">Tunesisches Chemlali</div>
-          <div class="product-name-ar">زيت شملالي تونسي</div>
+          <div class="product-origin">Spanien · Jaén</div>
+          <div class="product-name">Andalusisches Reserva</div>
           <div class="product-health-tag">🔥 Anti-entzündlich · Kaltgepresst</div>
-          <div class="product-desc">Traditionelle Chemlali-Sorte. Kräftig-würzig mit Kräuternoten. Ideal für Couscous und arabische Gerichte.</div>
+          <div class="product-desc">Früh geerntete Picual-Olive. Kräftig-würzig, leicht pfeffrig. Höchster Polyphenolgehalt unter unseren Ölen.</div>
           <div class="product-footer">
-            <div class="product-price">€ 8,90 <small>/ 750ml</small></div>
+            <div class="product-price">€ 9,90 <small>/ 750ml</small></div>
             <button class="add-to-cart" onclick="addToCart(this)">+ Warenkorb</button>
           </div>
         </div>
@@ -1138,16 +920,15 @@
       <div class="product-card">
         <div class="product-img-wrap">
           <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=600&q=85&auto=format&fit=crop" alt="5L Kanister" loading="lazy">
-          <span class="product-badge badge-bestseller">Großhandel</span>
+          <span class="product-badge badge-gold">Großhandel</span>
         </div>
         <div class="product-body">
-          <div class="product-origin">Türkei · Izmir</div>
-          <div class="product-name">Halal Kanister 5L</div>
-          <div class="product-name-ar">زيت تركي حلال ٥ لتر</div>
-          <div class="product-health-tag">🫀 Nativ Extra · Für Restaurants</div>
-          <div class="product-desc">Für Restaurants, Moscheen & Caterer. Nativ Extra, kaltgepresst, halal-zertifiziert im 5L-Kanister.</div>
+          <div class="product-origin">Griechenland · Peloponnes</div>
+          <div class="product-name">Griechischer Kanister 5L</div>
+          <div class="product-health-tag">❤️ Nativ Extra · Für Restaurants</div>
+          <div class="product-desc">Ideal für Restaurants, Caterer und Wiederverkäufer. Nativ Extra, kaltgepresst im 5-Liter-Kanister.</div>
           <div class="product-footer">
-            <div class="product-price">€ 36,00 <small>/ 5L</small></div>
+            <div class="product-price">€ 38,00 <small>/ 5L</small></div>
             <button class="add-to-cart" onclick="addToCart(this)">+ Warenkorb</button>
           </div>
         </div>
@@ -1155,17 +936,16 @@
 
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d730?w=600&q=85&auto=format&fit=crop" alt="Jordanisches Olivenöl" loading="lazy">
-          <span class="product-badge badge-halal">☪️ Halal</span>
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d730?w=600&q=85&auto=format&fit=crop" alt="Türkisches Olivenöl" loading="lazy">
+          <span class="product-badge badge-green">Mild</span>
         </div>
         <div class="product-body">
-          <div class="product-origin">Jordanien · Ajloun</div>
-          <div class="product-name">Jordanisches Rasheid Öl</div>
-          <div class="product-name-ar">زيت زيتون الأردني</div>
-          <div class="product-health-tag">🛡️ Immunsystem · Hohe Polyphenole</div>
-          <div class="product-desc">Aus Ajloun, Jordanien. Sehr kräftiges Aroma, hoher Polyphenolgehalt. Sunna-gemäßer Premium-Genuss.</div>
+          <div class="product-origin">Türkei · Ayvalik</div>
+          <div class="product-name">Türkisches Ayvalik Öl</div>
+          <div class="product-health-tag">🛡️ Immunsystem · Goldene Farbe</div>
+          <div class="product-desc">Aus der Ayvalik-Olive. Goldene Farbe, sanftes Aroma, leicht süßlich. Ideal für Brot und Salate.</div>
           <div class="product-footer">
-            <div class="product-price">€ 10,90 <small>/ 750ml</small></div>
+            <div class="product-price">€ 7,50 <small>/ 750ml</small></div>
             <button class="add-to-cart" onclick="addToCart(this)">+ Warenkorb</button>
           </div>
         </div>
@@ -1173,17 +953,16 @@
 
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=85&auto=format&fit=crop" alt="Al-Baraka Prestige" loading="lazy">
-          <span class="product-badge badge-neu">Exklusiv</span>
+          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=85&auto=format&fit=crop" alt="Prestige Olivenöl" loading="lazy">
+          <span class="product-badge badge-black">Exklusiv</span>
         </div>
         <div class="product-body">
-          <div class="product-origin">Palästina · Nablus</div>
-          <div class="product-name">Al-Baraka Prestige</div>
-          <div class="product-name-ar">زيت البركة الممتاز</div>
+          <div class="product-origin">Griechenland · Lakonien</div>
+          <div class="product-name">Athinolia Prestige</div>
           <div class="product-health-tag">💎 1000 J. alte Bäume · Limitiert</div>
-          <div class="product-desc">Unser edelster Tropfen. Aus 1000 Jahre alten Olivenbäumen. Limitierte Jahresernte. International ausgezeichnet.</div>
+          <div class="product-desc">Aus der seltenen Athinolia-Olive. International ausgezeichnet. Limitierte Jahresernte – unser edelster Tropfen.</div>
           <div class="product-footer">
-            <div class="product-price">€ 22,90 <small>/ 500ml</small></div>
+            <div class="product-price">€ 19,90 <small>/ 500ml</small></div>
             <button class="add-to-cart" onclick="addToCart(this)">+ Warenkorb</button>
           </div>
         </div>
@@ -1193,48 +972,40 @@
   </div>
 </section>
 
-<!-- ERNTE VIDEOS -->
+<!-- VIDEOS -->
 <section class="section videos-section" id="ernte">
   <div class="section-inner">
     <div class="section-label">Transparenz & Herkunft</div>
-    <h2 class="section-title" style="color:white;">Sehen Sie die Ernte<br>mit eigenen Augen.</h2>
+    <h2 class="section-title">Sehen Sie die Ernte<br>mit eigenen Augen.</h2>
     <p class="section-sub">Wir zeigen Ihnen genau, woher unser Öl kommt. Keine Geheimnisse – nur Qualität.</p>
 
     <div class="videos-grid">
-
-      <a href="https://www.youtube.com/results?search_query=olive+harvest+palestine" target="_blank" class="video-card" style="text-decoration:none;">
-        <img class="video-thumb" src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=700&q=80&auto=format&fit=crop" alt="Olivenernte Palästina">
+      <a href="https://www.youtube.com/results?search_query=olive+harvest+greece+kreta" target="_blank" class="video-card">
+        <img class="video-thumb" src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=700&q=80&auto=format&fit=crop" alt="Olivenernte Griechenland">
         <div class="video-overlay">
-          <div class="play-btn">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="video-label">Palästina</div>
-          <div class="video-title">Traditionelle Olivenernte in Ramallah</div>
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="video-label">Griechenland · Kreta</div>
+          <div class="video-title">Traditionelle Handernte im Olivenhain</div>
         </div>
       </a>
 
-      <a href="https://www.youtube.com/results?search_query=olive+harvest+morocco+cold+press" target="_blank" class="video-card" style="text-decoration:none;">
-        <img class="video-thumb" src="https://images.unsplash.com/photo-1544982503-9f984c14501a?w=700&q=80&auto=format&fit=crop" alt="Kaltpressung Marokko">
+      <a href="https://www.youtube.com/results?search_query=olive+oil+cold+press+mill" target="_blank" class="video-card">
+        <img class="video-thumb" src="https://images.unsplash.com/photo-1544982503-9f984c14501a?w=700&q=80&auto=format&fit=crop" alt="Kaltpressung">
         <div class="video-overlay">
-          <div class="play-btn">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="video-label">Marokko</div>
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="video-label">Herstellung</div>
           <div class="video-title">Kaltpressung in der traditionellen Mühle</div>
         </div>
       </a>
 
-      <a href="https://www.youtube.com/results?search_query=olive+oil+quality+test+polyphenols" target="_blank" class="video-card" style="text-decoration:none;">
+      <a href="https://www.youtube.com/results?search_query=olive+oil+quality+polyphenols+test" target="_blank" class="video-card">
         <img class="video-thumb" src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=700&q=80&auto=format&fit=crop" alt="Qualitätskontrolle">
         <div class="video-overlay">
-          <div class="play-btn">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="video-label">Qualitätskontrolle</div>
           <div class="video-title">Laboranalyse & Polyphenol-Messung</div>
         </div>
       </a>
-
     </div>
   </div>
 </section>
@@ -1243,17 +1014,17 @@
 <section class="section">
   <div class="section-inner">
     <div class="section-label" style="justify-content:center">Unser Prozess</div>
-    <h2 class="section-title" style="text-align:center">Vom Baum zur Flasche</h2>
+    <h2 class="section-title" style="text-align:center; margin-bottom: 0.5rem;">Vom Baum zur Flasche</h2>
     <div class="process-grid">
       <div class="process-step">
         <div class="process-num">1</div>
         <h4>Handernte</h4>
-        <p>Jede Olive wird von Hand gepflückt – schonend und ohne Beschädigung der Früchte.</p>
+        <p>Jede Olive wird von Hand gepflückt – schonend, ohne Beschädigung der Früchte.</p>
       </div>
       <div class="process-step">
         <div class="process-num">2</div>
         <h4>Pressung in 24h</h4>
-        <p>Innerhalb 24 Stunden nach der Ernte kaltgepresst bei max. 27°C für maximale Nährstoffe.</p>
+        <p>Kaltgepresst bei max. 27°C, innerhalb 24h nach Ernte – für maximale Nährstoffe.</p>
       </div>
       <div class="process-step">
         <div class="process-num">3</div>
@@ -1263,7 +1034,7 @@
       <div class="process-step">
         <div class="process-num">4</div>
         <h4>Versand zu Ihnen</h4>
-        <p>Lichtgeschützte Verpackung, Versand innerhalb 24h – frisch bis an Ihre Tür.</p>
+        <p>Lichtgeschützte Verpackung, Versand in 24h – frisch bis an Ihre Tür.</p>
       </div>
     </div>
   </div>
@@ -1276,8 +1047,7 @@
       <div class="contact-info">
         <div class="section-label">Kontakt & Bestellung</div>
         <h3>Schreiben Sie uns –<br>wir antworten schnell.</h3>
-        <p>Für Bestellungen, Großhandelsanfragen oder Fragen zu unseren Produkten stehen wir Ihnen gerne zur Verfügung. Am schnellsten erreichen Sie uns über WhatsApp.</p>
-
+        <p>Für Bestellungen, Großhandelsanfragen oder Fragen zu unseren Produkten stehen wir Ihnen jederzeit zur Verfügung. Am schnellsten über WhatsApp.</p>
         <div class="contact-methods">
           <a href="https://wa.me/4915218585508" target="_blank" class="contact-method">
             <div class="contact-method-icon icon-wa">💬</div>
@@ -1293,11 +1063,11 @@
               <p>+49 152 18585508 · Mo–Fr 9–18 Uhr</p>
             </div>
           </a>
-          <a href="mailto:info@zaitoun-handel.de" class="contact-method">
+          <a href="mailto:info@oliveoro.de" class="contact-method">
             <div class="contact-method-icon icon-mail">✉️</div>
             <div class="contact-method-text">
               <h4>E-Mail</h4>
-              <p>info@zaitoun-handel.de</p>
+              <p>info@oliveoro.de</p>
             </div>
           </a>
         </div>
@@ -1309,11 +1079,11 @@
           <div class="form-row">
             <div class="form-group">
               <label>Vorname *</label>
-              <input type="text" placeholder="Ahmad" required>
+              <input type="text" placeholder="Max" required>
             </div>
             <div class="form-group">
               <label>Nachname *</label>
-              <input type="text" placeholder="Al-Mahmoud" required>
+              <input type="text" placeholder="Mustermann" required>
             </div>
           </div>
           <div class="form-group">
@@ -1330,16 +1100,16 @@
               <option value="">– Bitte wählen –</option>
               <option>Privatbestellung (1–5 Flaschen)</option>
               <option>Großbestellung (ab 6 Flaschen)</option>
-              <option>Großhandel / Restaurant / Moschee</option>
-              <option>Halal Eigenmarke / White Label</option>
+              <option>Großhandel / Restaurant / Catering</option>
+              <option>Eigenmarke / White Label</option>
               <option>Sonstiges</option>
             </select>
           </div>
           <div class="form-group">
             <label>Nachricht</label>
-            <textarea placeholder="Welches Produkt? Welche Menge? Fragen?"></textarea>
+            <textarea placeholder="Welches Produkt? Welche Menge? Haben Sie Fragen?"></textarea>
           </div>
-          <button type="submit" class="btn btn-green" style="width:100%; justify-content:center; border-radius:8px; padding: 1rem;">
+          <button type="submit" class="btn btn-green" style="width:100%; justify-content:center; border-radius:8px; padding:1rem;">
             Anfrage absenden
           </button>
         </form>
@@ -1352,57 +1122,50 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo">Zait<span>oun</span></div>
-      <div class="footer-ar">زيت زيتون حلال ممتاز</div>
-      <p class="footer-about" style="margin-top: 1rem;">Halal-zertifiziertes Premium-Olivenöl aus muslimischen Familienbetrieben. Wissenschaftlich belegt. Sunna-gemäß.</p>
+      <div class="footer-logo">Olive<span>Oro</span></div>
+      <p class="footer-about">Premium-Olivenöl aus den besten Anbauregionen des Mittelmeerraums. Wissenschaftlich belegt. Direkt vom Erzeuger.</p>
     </div>
     <div>
       <h4>Produkte</h4>
-      <a href="#produkte">Palästinensisches Öl</a>
-      <a href="#produkte">Marokkanisches Bio-Öl</a>
-      <a href="#produkte">Jordanisches Öl</a>
-      <a href="#produkte">5L Kanister Halal</a>
+      <a href="#produkte">Kretisches Nativ Extra</a>
+      <a href="#produkte">Toskana Bio-Öl</a>
+      <a href="#produkte">Athinolia Prestige</a>
+      <a href="#produkte">5L Kanister Großhandel</a>
     </div>
     <div>
       <h4>Information</h4>
       <a href="#gesundheit">Gesundheitsvorteile</a>
       <a href="#ernte">Ernte & Herstellung</a>
-      <a href="#">Halal-Zertifikat</a>
+      <a href="#">Qualitätssicherung</a>
       <a href="#">Impressum & AGB</a>
     </div>
     <div>
       <h4>Kontakt</h4>
       <a href="https://wa.me/4915218585508" target="_blank">💬 WhatsApp: +49 152 18585508</a>
       <a href="tel:+4915218585508">📞 +49 152 18585508</a>
-      <a href="mailto:info@zaitoun-handel.de">✉️ info@zaitoun-handel.de</a>
+      <a href="mailto:info@oliveoro.de">✉️ info@oliveoro.de</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Zaitoun Handel – Alle Rechte vorbehalten</span>
-    <span style="font-family:'Playfair Display',serif; color: var(--gold-light);">الحمد لله</span>
+    <span>© 2026 OliveOro – Alle Rechte vorbehalten</span>
     <span>Datenschutz · AGB · Impressum</span>
   </div>
 </footer>
 
-<!-- TOAST -->
 <div id="toast"></div>
 
 <script>
-  // Navbar scroll effect
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-  });
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
 
-  // Cart
   let cartCount = 0;
   function addToCart(btn) {
     cartCount++;
-    const original = btn.textContent;
+    const orig = btn.textContent;
     btn.textContent = '✓ Hinzugefügt';
-    btn.style.background = '#0d4a28';
+    btn.style.background = '#1a4a30';
     showToast('Produkt zum Warenkorb hinzugefügt');
-    setTimeout(() => { btn.textContent = original; btn.style.background = ''; }, 2000);
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 2000);
   }
 
   function showToast(msg) {
@@ -1418,24 +1181,21 @@
     e.target.reset();
   }
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
 
-  // Animate stats on scroll
-  const observer = new IntersectionObserver((entries) => {
+  const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.style.opacity = '1'; });
   }, { threshold: 0.1 });
   document.querySelectorAll('.study-card, .benefit-card, .product-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transition = 'opacity 0.5s ease';
-    observer.observe(el);
+    obs.observe(el);
   });
 </script>
-
 </body>
 </html>
